@@ -12,8 +12,8 @@ import { motion } from 'framer-motion'
 function Project() {
     const project = [
         {
-            title: "E-Commerce website",
-            description: "(Upon completion) A comprehensive e-commerce platform equipped with all necessary features for efficient business operations.",
+            title: "Restaurant POS System",
+            description: "(Upon completion) A comprehensive POS platform equipped with all necessary features for efficient business operations.",
             image: ecom,
             technology: "React Node.js Tailwind Typescript Yarn Vite JWT MongoDB Express",
             link:'null'
