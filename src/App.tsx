@@ -1,7 +1,6 @@
 import Connect from "./component/connect"
 import ContentFirst from "./component/content-first"
 import Education from "./component/education"
-import Footer from "./component/Footer"
 import Header from "./component/Header"
 import Project from "./component/project"
 import Skills from "./component/skills-second"
@@ -23,7 +22,7 @@ function App() {
           <Project />
           <Education />
           <Connect />
-          <Footer />
+          
         </div>
       </div>
 
