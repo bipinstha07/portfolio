@@ -58,8 +58,8 @@ function Project() {
                     <div key={index} className="flex p-2 border-b-1 border-blue-800 md:border-0  m-2 flex-col md:flex-row justify-center md:gap-40 items-center">
                         <div className=' text-center  md:w-1/3 '>
 
-                       <div className='md:pl-50'> 
-                        <motion.img className='mx-auto' whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} width='180px' src={data.image} alt={data.title} />
+                       <div className=' md:pl-50'> 
+                        <motion.img className='mx-auto w-[180px]' whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }}  src={data.image} alt={data.title} />
                         </div>
                         </div>
                         <motion.div className=' md:w-2/3' whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: 100 }} transition={{ duration: 0.5 }} >
@@ -91,12 +91,12 @@ function Project() {
 
                     <div className="flex flex-col md:flex-row mt-8 gap-6 items-start">
                         {/* Left Date */}
-                        <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className="md:w-1/3 text-center md:text-end text-gray-400 font-medium">
+                        <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className="md:w-1/3  md:text-end text-gray-400 font-medium">
                             Spring 2023
                         </motion.div>
 
                         {/* Right Content */}
-                        <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: 100 }} transition={{ duration: 0.5 }} className="md:w-2/3 space-y-2">
+                        <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: 10 }} transition={{ duration: 0.5 }} className="md:w-2/3 space-y-2">
                             <h3 className="text-lg font-semibold text-white">
                                 Teacher Candidate Perceptions of the Use of Virtual Reality as a Teaching Tool
                             </h3>
@@ -112,7 +112,7 @@ function Project() {
                     </div>
                     <div  className="flex flex-col md:flex-row mt-8 gap-6 items-start">
                         {/* Left Date */}
-                        <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className="md:w-1/3 text-center md:text-end text-gray-400 font-medium">
+                        <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -10 }} transition={{ duration: 0.5 }} className="md:w-1/3 md:text-end text-gray-400 font-medium">
                             Fall 2023
                         </motion.div>
 
