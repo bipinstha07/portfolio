@@ -28,7 +28,7 @@ function ContentFirst() {
 
     return (
         <>
-            <div className="flex md:pt-45  flex-wrap md:h-screen">
+            <div className="flex md:pt-35  flex-wrap md:h-screen">
                 <div className="md:w-3/5  order-2 md:order-1 ">
                     <motion.p variants={container(0)} initial='hidden' animate='visible' className=" text-5xl md:text-8xl mb-2 md:mb-8  font-extralight ">Bipin Shrestha</motion.p>
                     <motion.p variants={container(0.5)} initial='hidden' animate='visible' className="md:mb-8 mb-4 text-xl md:text-2xl bg-gradient-to-r from-purple-600 to-[#39ff14] text-transparent bg-clip-text">FULL STACK DEVELOPER</motion.p>
@@ -36,7 +36,7 @@ function ContentFirst() {
                         {hide && <motion.span  animate={{x:0,opacity:1}} initial={{x:-400,opacity:0}} transition={{duration:2}} className="text-cyan-600"
 
                         >
-                            {text} <a href="" target="_blank" className="text-blue-500"> Visit </a>
+                            {text} <a href="https://www.facebook.com/groups/1578981188801831" target="_blank" className="text-blue-500"> Visit </a>
                         </motion.span>
                         }
                     </motion.p>
