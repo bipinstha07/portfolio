@@ -25,7 +25,6 @@ function ContentFirst() {
 
     }
 
-
     return (
         <>
             <div className="flex md:pt-35  flex-wrap md:h-screen">
