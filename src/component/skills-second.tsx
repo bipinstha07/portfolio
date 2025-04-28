@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 const skills = [
     { name: 'Java', level: 90 },
     { name: 'React', level: 85 },
-    { name: 'Spring Boot', level: 20 },
+    { name: 'Spring Boot', level: 50 },
     { name: 'SQL', level: 82 },
     { name: 'AWS', level: 75 },
     { name: 'TailWindCSS', level: 90 },
