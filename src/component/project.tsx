@@ -102,7 +102,7 @@ function Project() {
                             </h3>
 
                             <p className="italic text-gray-400">
-                                Research with Professor Stacia Jones
+                                Research with Professor Stacia Austin
                             </p>
 
                             <p className="text-gray-400 text-sm leading-relaxed">
@@ -123,7 +123,7 @@ function Project() {
                             </h3>
 
                             <p className="italic text-gray-400">
-                                Research with Professor Veronika Humphires
+                                Research with Professor Veronika Humphries
                             </p>
 
                             <p className="text-gray-400 text-sm leading-relaxed">
