@@ -3,6 +3,7 @@ import ecom from '../assets/ecom.png'
 import clone from '../assets/webclone.png'
 import armstrong from  '../assets/armstrong.png'
 import portfolio from '../assets/portfolio.png'
+import blog from '../assets/blog.png'
 
 import { ArrowRightOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
@@ -17,6 +18,13 @@ function Project() {
             image: ecom,
             technology: "React Node.js Tailwind Typescript Yarn Vite JWT MongoDB Express",
             link:'null'
+        },
+        {
+            title: "Blogging Website",
+            description: "A full-featured blogging platform , built for efficient content management and user interaction",
+            image: blog,
+            technology: "Node.js Express Bootstrap EJS MongoDB crypto.createHmac (SHA-256 + Salt)",
+            link:'https://github.com/bipinstha07/blog'
         },
         {
             title:"Personal Portfolio",
