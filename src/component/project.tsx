@@ -24,7 +24,7 @@ function Project() {
             description: "A full-featured blogging platform , built for efficient content management and user interaction",
             image: blog,
             technology: "Node.js Express Bootstrap EJS MongoDB crypto.createHmac (SHA-256 + Salt)",
-            link:'https://github.com/bipinstha07/blog'
+            link:'https://blog-3npo.onrender.com/'
         },
         {
             title:"Personal Portfolio",
