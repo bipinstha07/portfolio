@@ -85,11 +85,11 @@ export default function Education() {
                 {data.map((data, index) => (
                     <>
                         <div key={index} className="flex items-center justify-center gap-10  p-4 ">
-                            <div className="w-1/3  ">
+                            <div className="w-3/4  ">
                                 <motion.img whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className='ml-auto' width="120px" src={data.img} alt="ULM Logo" />
                             </div>
 
-                            <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className='w-2/3 ' >
+                            <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className='w-4/4 ' >
                                 
                                     <p className="text-lg font-semibold">{data.title}</p>
                                     <p className="text-sm text-gray-600">{data.subtitle}</p>
