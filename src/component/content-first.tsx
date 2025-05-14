@@ -42,7 +42,7 @@ function ContentFirst() {
                     <motion.div variants={container(0.5)} initial='hidden' animate='visible' className="text-end mt-4 mb md:mt-20">
 
                         <a href="https://www.linkedin.com/in/bipin-shrestha-4baba01a0/" target="_blank">
-                            <Button color="cyan" variant="filled" className=" border-cyan-200! bg-transparent!">
+                            <Button  color="cyan" variant="filled" className=" border-cyan-200! hover:border-cyan-400! hover:bg-cyan-400! hover:text-black! bg-transparent!">
                                 Let's Connect <FaLongArrowAltRight />
                             </Button>
                         </a>
