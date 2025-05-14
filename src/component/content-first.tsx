@@ -27,7 +27,7 @@ function ContentFirst() {
 
     return (
         <>
-            <div className="flex md:pt-35  flex-wrap md:h-screen">
+            <div className="flex md:pt-25  flex-wrap md:h-screen">
                 <div className="md:w-3/5  order-2 md:order-1 ">
                     <motion.p variants={container(0)} initial='hidden' animate='visible' className=" text-5xl md:text-8xl mb-2 md:mb-8  font-extralight ">Bipin Shrestha</motion.p>
                     <motion.p variants={container(0.5)} initial='hidden' animate='visible' className="md:mb-8 mb-4 text-xl md:text-2xl bg-gradient-to-r from-purple-600 to-[#39ff14] text-transparent bg-clip-text">FULL STACK DEVELOPER</motion.p>
