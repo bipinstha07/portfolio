@@ -29,9 +29,9 @@ function ContentFirst() {
         <>
             <div className="flex md:pt-25  flex-wrap md:h-screen">
                 <div className="md:w-3/5  order-2 md:order-1 ">
-                    <motion.p variants={container(0)} initial='hidden' animate='visible' className=" text-5xl md:text-8xl mb-2 md:mb-8  font-extralight ">Bipin Shrestha</motion.p>
+                    <motion.p variants={container(0.5)} initial='hidden' animate='visible' className=" text-5xl md:text-8xl mb-2 md:mb-8  font-extralight ">Bipin Shrestha</motion.p>
                     <motion.p variants={container(0.5)} initial='hidden' animate='visible' className="md:mb-8 mb-4 text-xl md:text-2xl bg-gradient-to-r from-purple-600 to-[#39ff14] text-transparent bg-clip-text">FULL STACK DEVELOPER</motion.p>
-                    <motion.p variants={container(0.7)} initial='hidden' animate='visible' className="text-sm ">Motivated Computer Science student with a passion for problem solving and software development. Proficient in Java with a solid foundation in algorithms and data structures. Skilled in web development and experienced in building projects using React, Spring Boot, and Microservices. Familiar with CI/CD pipelines, SQL/NoSQL databases, and AWS. Passionate about AI agents and autonomous services. Seeking opportunities to contribute innovative ideas and grow in a dynamic tech environment. 
+                    <motion.p variants={container(0.5)} initial='hidden' animate='visible' className="text-sm ">Motivated Computer Science student with a passion for problem solving and software development. Proficient in Java with a solid foundation in algorithms and data structures. Skilled in web development and experienced in building projects using React, Spring Boot, and Microservices. Familiar with CI/CD pipelines, SQL/NoSQL databases, and AWS. Passionate about AI agents and autonomous services. Seeking opportunities to contribute innovative ideas and grow in a dynamic tech environment. 
                         {hide && <motion.span  animate={{x:0,opacity:1}} initial={{x:-400,opacity:0}} transition={{duration:2}} className="text-cyan-600"
 
                         >
@@ -39,7 +39,7 @@ function ContentFirst() {
                         </motion.span>
                         }
                     </motion.p>
-                    <motion.div variants={container(0.7)} initial='hidden' animate='visible' className="text-end mt-4 mb md:mt-20">
+                    <motion.div variants={container(0.5)} initial='hidden' animate='visible' className="text-end mt-4 mb md:mt-20">
 
                         <a href="https://www.linkedin.com/in/bipin-shrestha-4baba01a0/" target="_blank">
                             <Button color="cyan" variant="filled" className=" border-cyan-200! bg-transparent!">
@@ -51,14 +51,12 @@ function ContentFirst() {
                 </div>
 
 
-                <motion.div initial={{ x: 20, opacity: 0 }} animate={{ x: 1, opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} className=" md:w-1/5 order-1 md:order-2 md:ml-35 ">
-
-
-
-                    <motion.img onClick={show} initial={{ y: -10 }} animate={{
+                <motion.div initial={{ x: 100, opacity: 0 }} animate={{ x: 1, opacity: 1 }} transition={{ duration: 0.5, delay: 0.5}} className=" md:w-1/5 order-1 md:order-2 md:ml-35 ">
+                    <motion.img onClick={show} initial={{ y: -20 }} animate={{
                         y: [10, -10],
                         transition: {
                             duration: 3,
+                            
                             ease: 'linear' as const,
                             repeat: Infinity,
                             repeatType: 'reverse' as const,
