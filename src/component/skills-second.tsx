@@ -26,7 +26,7 @@ const COLORS = [
 ];
 
 const techVar = (duration: number) => ({
-    initial: { y: -10 }, // fixed here
+    initial: { y: -10 },
     animate: {
         y: [10, -10],
         transition: {
@@ -77,79 +77,79 @@ export default function Skills() {
 
                 <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: 50 }} transition={{ duration: 0.5 }} className="flex  md:w-3/5 flex-wrap gap-4">
                     <div className="flex justify-center flex-wrap gap-4">
-                        <motion.div variants={techVar(2)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(2)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-cyan-400">
                             <FaReact className="text-5xl text-cyan-400" />
-                            <div className="absolute  bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white! bg-black rounded shadow opacity-0  group-hover:opacity-100 transition-opacity">
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow opacity-0 group-hover:opacity-100 transition-opacity">
                                 85%
                             </div>
                         </motion.div>
 
-                        <motion.div variants={techVar(2.5)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-2 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(2.5)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-2 rounded-2xl transition-all duration-300 hover:border-orange-600">
                             <FaJava className="text-5xl text-orange-600" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 90%
                             </div>
                         </motion.div>
 
-                        <motion.div variants={techVar(3)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(3)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-green-500">
                             <SiMongodb className="text-5xl text-green-500" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 80%
                             </div>
                         </motion.div>
 
-                        <motion.div variants={techVar(2.8)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(2.8)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-yellow-400">
                             <FaAws className="text-5xl text-yellow-400" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 75%
                             </div>
                         </motion.div>
 
-                        <motion.div variants={techVar(3.2)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(3.2)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-blue-600">
                             <SiMysql className="text-5xl text-blue-600" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 80%
                             </div>
                         </motion.div>
 
-                        <motion.div variants={techVar(2.3)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(2.3)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-yellow-300">
                             <SiJavascript className="text-5xl text-yellow-300" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 85%
                             </div>
                         </motion.div>
 
-                        <motion.div variants={techVar(3.5)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(3.5)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-green-400">
                             <FaNodeJs className="text-5xl text-green-400" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 85%
                             </div>
                         </motion.div>
 
-                        <motion.div variants={techVar(3.8)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(3.8)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-green-600">
                             <SiSpringboot className="text-5xl text-green-600" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 20%
                             </div>
                         </motion.div>
 
-                        <motion.div variants={techVar(2.7)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(2.7)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-blue-400">
                             <SiKubernetes className="text-5xl text-blue-400" />
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 20%
                             </div>
                         </motion.div>
 
-                        <motion.div variants={techVar(3.1)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(3.1)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-teal-300">
                             <RiTailwindCssFill className="text-5xl text-teal-300" />
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 90%
                             </div>
                         </motion.div>
 
-                        <motion.div variants={techVar(2.9)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-transform hover:scale-95 active:scale-90">
+                        <motion.div variants={techVar(2.9)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-purple-500">
                             <SiHibernate className="text-5xl text-purple-500" />
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 0%
                             </div>
                         </motion.div>
