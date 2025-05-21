@@ -4,6 +4,7 @@ import hackerank from '../assets/hackerank.png'
 import { Link } from 'react-router'
 import postman from '../assets/postman.png'
 import saylor from '../assets/saylor.png'
+import udemy from '../assets/udemy.png'
 import { motion } from 'framer-motion'
 
 
@@ -40,6 +41,21 @@ const data = [
         ),
         img: hackerank,
         link: "https://www.hackerrank.com/certificates/4965911b13aa",
+    },
+    {
+        title: 'Linux Command Line: From Zero to Hero',
+        subtitle: (
+            <>
+                Udemy Earned May 2025{' '}
+                <Link to="https://www.udemy.com/certificate/UC-a7f64826-e9a5-4255-83c6-9559ad2791fa" target="_blank" className="text-blue-500">
+                    View Certificate
+                </Link><br />
+                <span className="text-gray-500 text-sm">
+                Skilled in using Linux commands for managing files, users, software, tasks, system monitoring, and firewall settings.  </span>
+            </>
+        ),
+        img: udemy,
+        link: "https://www.udemy.com/certificate/UC-a7f64826-e9a5-4255-83c6-9559ad2791fa",
     },
     {
         title: 'CS406: Information Security',
