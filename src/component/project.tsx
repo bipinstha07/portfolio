@@ -30,7 +30,7 @@ function Project() {
             title:"Personal Portfolio",
             description: "A professional personal portfolio showcasing skills, projects, and experience, built with modern web technologies for optimal performance.",
             image:portfolio,
-            technology:"React Tailwind Framer Typescript",
+            technology:"React Tailwind Framer Typescript AI Assistance GEMINI",
             link:''
         },
         {
