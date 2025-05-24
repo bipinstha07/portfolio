@@ -173,7 +173,7 @@ function ContentFirst() {
 
     return (
         <>
-            <div className="flex md:pt-25 flex-wrap md:h-screen pt-0 md:pt-25 relative">
+            <div className="flex md:pt-25 flex-wrap md:h-screen pt-0  relative">
                 {/* Removing the gradient border lines */}
                 <div className="md:w-3/5 order-2 md:order-1 relative">
                     <motion.p
