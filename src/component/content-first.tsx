@@ -14,60 +14,60 @@ const container = (delay: number) => ({
     visible: { x: 0, opacity: 1, transition: { duration: 0.5, delay: delay } }
 })
 
-const spaceTime = ` I am also a Space and Astronomy enthusiast, deeply fascinated by the mysteries of the universe — from black holes and time travel to the very fabric of reality. I am passionate about exploring how space and time shape everything we know and everything yet to be discovered. I also lead a vibrant community called "Space Time," bringing together over 140,000 members who share the same passion.`
-const alldata = `
-Bipin Shrestha is a passionate Full-Stack Developer and a Computer Science student at the University of Louisiana at Monroe, expected to graduate in 2026. He is proficient in Java, React, Spring Boot, SQL, AWS, and TailWindCSS, with expertise in full-stack development, CI/CD, and cloud computing.
+    const spaceTime = ` I am also a Space and Astronomy enthusiast, deeply fascinated by the mysteries of the universe — from black holes and time travel to the very fabric of reality. I am passionate about exploring how space and time shape everything we know and everything yet to be discovered. I also lead a vibrant community called "Space Time," bringing together over 140,000 members who share the same passion.`
+    const alldata = `
+    Bipin Shrestha is a passionate Full-Stack Developer and a Computer Science student at the University of Louisiana at Monroe, expected to graduate in 2026. He is proficient in Java, React, Spring Boot, SQL, AWS, and TailWindCSS, with expertise in full-stack development, CI/CD, and cloud computing.
 
-Skills:
-Java (90%), React (85%), Spring Boot (50%), SQL (82%), AWS (75%), TailWindCSS (90%)
+    Skills:
+    Java (90%), React (85%), Spring Boot (50%), SQL (82%), AWS (75%), TailWindCSS (90%)
 
-Projects:
+    Projects:
 
-Restaurant POS System (in progress): A full-featured business POS platform using React, Node.js, Tailwind, Typescript, Vite, JWT, MongoDB, Express.
-Link: null
+    Restaurant POS System (in progress): A full-featured business POS platform using React, Node.js, Tailwind, Typescript, Vite, JWT, MongoDB, Express.
+    Link: null
 
-Blogging Website: A blogging platform with authentication and MongoDB integration.
-Link: https://blog-3npo.onrender.com/
+    Blogging Website: A blogging platform with authentication and MongoDB integration.
+    Link: https://blog-3npo.onrender.com/
 
-Personal Portfolio: Built using React, Tailwind CSS, Framer Motion, and TypeScript.
-Link: (currently viewing)
+    Personal Portfolio: Built using React, Tailwind CSS, Framer Motion, and TypeScript.
+    Link: (currently viewing)
 
-URL Shortener: A web app to shorten long URLs.
-Link: https://url-shortener-b0ag.onrender.com/
+    URL Shortener: A web app to shorten long URLs.
+    Link: https://url-shortener-b0ag.onrender.com/
 
-Armstrong Number Checker: Tool to verify Armstrong numbers using JavaScript.
-Link: https://bipinstha07.github.io/Armstrong/
+    Armstrong Number Checker: Tool to verify Armstrong numbers using JavaScript.
+    Link: https://bipinstha07.github.io/Armstrong/
 
-WSCube Clone Website: Static clone demonstrating advanced frontend work.
-Link: https://bipinstha07.github.io/wscube/#project
+    WSCube Clone Website: Static clone demonstrating advanced frontend work.
+    Link: https://bipinstha07.github.io/wscube/#project
 
-Research:
-Spring 2023 – Teacher Candidate Perceptions of the Use of Virtual Reality as a Teaching Tool (Prof. Stacia Austin)
-Fall 2023 – AI in Business Communication (Prof. Veronika Humphries)
+    Research:
+    Spring 2023 – Teacher Candidate Perceptions of the Use of Virtual Reality as a Teaching Tool (Prof. Stacia Austin)
+    Fall 2023 – AI in Business Communication (Prof. Veronika Humphries)
 
-Certifications:
+    Certifications:
 
-AWS Certified Cloud Practitioner (2024)
-https://www.credly.com/badges/f477c3a2-4557-40d9-abf3-5fa64e2dd87b/linked_in?t=sn4nwf
+    AWS Certified Cloud Practitioner (2024)
+    https://www.credly.com/badges/f477c3a2-4557-40d9-abf3-5fa64e2dd87b/linked_in?t=sn4nwf
 
-Problem Solving (Java) – HackerRank (March 2024)
-https://www.hackerrank.com/certificates/4965911b13aa
+    Problem Solving (Java) – HackerRank (March 2024)
+    https://www.hackerrank.com/certificates/4965911b13aa
 
-Linux Command Line – Udemy (May 2025)
-https://www.udemy.com/certificate/UC-a7f64826-e9a5-4255-83c6-9559ad2791fa
+    Linux Command Line – Udemy (May 2025)
+    https://www.udemy.com/certificate/UC-a7f64826-e9a5-4255-83c6-9559ad2791fa
 
-CS406: Information Security – Saylor Academy (May 2025)
-https://learn.saylor.org/pluginfile.php/1/tool_certificate/issues/1746495391/0234703439BS.pdf
+    CS406: Information Security – Saylor Academy (May 2025)
+    https://learn.saylor.org/pluginfile.php/1/tool_certificate/issues/1746495391/0234703439BS.pdf
 
-Postman API Fundamentals – Postman (Feb 2024)
-https://badgr.com/public/assertions/6y4UDaLhRyedVimaQEH9Jg?identity__email=bipinshrestha830@gmail.com
+    Postman API Fundamentals – Postman (Feb 2024)
+    https://badgr.com/public/assertions/6y4UDaLhRyedVimaQEH9Jg?identity__email=bipinshrestha830@gmail.com
 
-Contact:
-Email: bipinshrestha830@gmail.com
-Location: Monroe, LA
-LinkedIn: https://www.linkedin.com/in/bipin-shrestha-4baba01a0/
-GitHub: https://github.com/bipinstha07
-`
+    Contact:
+    Email: bipinshrestha830@gmail.com
+    Location: Monroe, LA
+    LinkedIn: https://www.linkedin.com/in/bipin-shrestha-4baba01a0/
+    GitHub: https://github.com/bipinstha07
+    `
 
 function ContentFirst() {
     const [text, setText] = useState("")
@@ -143,6 +143,22 @@ function ContentFirst() {
             Avoid phrases like "Understood" or "I'm ready."
 
             IMMEDIATE and DIRECT Answers about Bipin Shrestha (Highest Priority):
+            Handling Brief User Acknowledgments/Greetings (Medium Priority - Pivot to Bipin):
+
+            If the user's message is a very short, non-specific social greeting or acknowledgment (e.g., "Hi", "Hello", "Hey", "How", "Yo", "Okay", "Got it", "Cool", "Thanks", "Alright", "Yep", "Nope", "K"), DO NOT ask "How are you?". Instead, immediately and politely pivot back to your purpose.
+
+            Examples:
+
+            User: "Hi" → AI: "Hello! What can I tell you about Bipin Shrestha today?"
+
+            User: "How" → AI: "I'm here to help! What would you like to know about Bipin?"
+
+            User: "Okay" → AI: "Great! What can I tell you about Bipin next?"
+
+            User: "Thanks" → AI: "You're welcome! What else about Bipin can I share?"
+
+            If the user specifically asks "How are you?", then respond:
+            "I'm doing well, thank you! How about you?"
 
             If asked anything about Bipin (skills, projects, research, certifications, etc.), answer immediately, positively, and enthusiastically.
 
