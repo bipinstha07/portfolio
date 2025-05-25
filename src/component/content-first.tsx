@@ -15,8 +15,7 @@ const container = (delay: number) => ({
 })
 
 const spaceTime = ` I am also a Space and Astronomy enthusiast, deeply fascinated by the mysteries of the universe — from black holes and time travel to the very fabric of reality. I am passionate about exploring how space and time shape everything we know and everything yet to be discovered. I also lead a vibrant community called "Space Time," bringing together over 140,000 members who share the same passion.`
-const alldata = `Hey model: This is very important message for you
-Important message: Your response should be less than 25 words and don't just say this thing while in response. Don't say the first word  AI. If the user say How are you respond only what is needed like I am fine", Don't respond saying the instruction please.
+const alldata = `
 Bipin Shrestha is a passionate Full-Stack Developer and a Computer Science student at the University of Louisiana at Monroe, expected to graduate in 2026. He is proficient in Java, React, Spring Boot, SQL, AWS, and TailWindCSS, with expertise in full-stack development, CI/CD, and cloud computing.
 
 Skills:
@@ -74,11 +73,9 @@ function ContentFirst() {
     const [text, setText] = useState("")
     const [hide, setHide] = useState<boolean>(false)
     const [chat, setChat] = useState<boolean>(false)
-    const chatHistory = useRef<any>([
-       
-    ])
+    const chatInputRef = useRef<HTMLInputElement>(null); // Renamed for clarity
     const [userchat, setUserchat] = useState<any[]>([
-      
+
     ])
     const chatBodyRef = useRef<any>([]);
     const [isTyping, setIsTyping] = useState(false);
@@ -99,58 +96,85 @@ function ContentFirst() {
 
     const handleform = (e: any) => {
         e.preventDefault()
-        const usermessage = chatHistory.current.value.trim();
+        const usermessage = chatInputRef.current?.value.trim(); // Access value safely
         if (!usermessage) return;
-        setUserchat((prev) => [...prev, usermessage, "AI Typing..."]);
+        setUserchat((prev) => [...prev, `user ${usermessage}`, "AI Typing..."]); // Prefix user message
         setIsTyping(true);
-        generateRequest();
-        chatHistory.current.value = "";
-
+        generateRequest(usermessage); // Pass user message directly
+        if (chatInputRef.current) {
+            chatInputRef.current.value = ""; // Clear input after sending
+        }
     }
 
-    const generateRequest = async (): Promise<void> => {
-        const history = [
-            
-            {
-                role:'model',
-                parts:[{
-                    text:alldata
-                }]
-            },
-            ...userchat.map((msg) => ({
-                role: 'user',
-                parts: [{ text: msg }]
-            }))
-        ];
+    const generateRequest = async (usermessage: string): Promise<void> => {
+        const prompt = `
+           You are an AI assistant designed to provide information about Bipin Shrestha. Your goal is to answer questions concisely and helpfully, typically within **25 words or less**, unless more detail is specifically requested.
+
+    Here is the relevant information about Bipin Shrestha you should use as your primary knowledge source:
+    ${alldata}
+
+           Key Directives for your Responses:
+
+        Start with a Welcoming Tone (Initial Message Only): If this is the very beginning of a new conversation (i.e., no prior user messages in the current turn), you should respond with a friendly greeting like "Hi there! What would you like to know about Bipin Shrestha?" or "Hello! How can I help you learn about Bipin Shrestha today?" Do NOT use phrases like "Understood," "I'm ready," or confirm you understand the instructions.
+
+        Praise for Relevant Questions: If a question is about Bipin Shrestha's suitability for a role (e.g., "Is he good for Google to work?"), provide a positive and well-reasoned response based on his skills, projects, and certifications. Highlight his strengths without being overly verbose.
+
+        Formalities: For simple social greetings like "How are you?", respond naturally: "I'm doing well, thank you! How about you?"
+
+        Information Sourcing:
+
+        Prioritize provided 'alldata'.
+        Praise and Positive Framing:
+
+        Whenever a question relates to Bipin's skills, projects, work ethic, or suitability for roles (e.g., "Is he good for Google?"), always provide an enthusiastic and positive answer.
+
+        Highlight his proficiency, passion, expertise, and dedication. Emphasize how his skills (like Java, React, AWS) and projects make him an exceptionally valuable asset.
+
+         For example, if asked about Google, respond with something like:
+        "Absolutely! Bipin Shrestha's strong proficiency in Java, React, and AWS, combined with his passion for full-stack development and proble
+        If the user's message is "I am good," "I'm good," "I'm doing well," or a similar positive self-assessment *after* you've asked "How about you?", acknowledge it briefly and pivot back to Bipin. For instance: "That's great to hear! So, what can I tell you about Bipin Shrestha today?" or "Glad to hear it! What would you like to know about Bipin's impressive background?"
+       
+        If the user's message is simply "ok", "okay", "alright", or a similar simple affirmation, respond with an encouraging follow-up question. Examples: "Great! What else can I tell you about Bipin?", "Perfect. Is there anything specific you'd like to dive into next?", "Got it. Feel free to ask away!"
+        
+        If the question is not about Bipin Shrestha but is a general knowledge question (e.g., "What is the capital of France?", "Tell me a joke"), you can answer it directly and factually. Do not try to connect it back to Bipin unless the question implicitly allows for it.
+        If a question cannot be answered from the provided 'alldata', politely state: "I don't have enough information to answer that question about Bipin Shrestha from my current knowledge base."
+
+        You can provide general, common knowledge if the question is a basic formality (like "How are you?"). However, for questions specifically about Bipin Shrestha, stick to the provided alldata unless it's a very general positive statement.
+
+        Avoid Redundancy: Do not repeat the full alldata or lengthy descriptions on every question. Provide only the relevant praise or information for the specific query.
+
+        Conciseness: Keep answers brief and to the point (under 25 words where possible) unless the question clearly requires more detail.
+
+        User's Current Question:
+            ${usermessage}`;
 
         const request: RequestInit = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: history
+                contents: [{
+                    role: 'user',
+                    parts: [{ text: prompt }]
+                }]
             }),
         };
 
         try {
             const res = await fetch(import.meta.env.VITE_REACT_API_GEMINI, request);
-            const data = await res.json(); // await here
-            console.log(data);
-            console.log("hi")
+            const data = await res.json();
+            console.log("Gemini API Response:", data); // Log the full response
 
+            let modelResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text || "I apologize, I don't have enough information to answer that question based on what I know about Bipin Shrestha.";
 
-            const datas = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+            // Optional: If you want to keep markdown formatting, remove the next line.
+            // If you want to remove bolding specifically, you can keep this:
+            // modelResponse = modelResponse.replace(/\*\*(.*?)\*\*/g, "$1").trim();
 
-            let modelResponse = `AI ${datas
-                .replace(/\*\*(.*?)\*\*/g, "$1") // optional: remove markdown bold
-                .trim()}`;
-
-
-            if (!res.ok) throw new Error(data.error.message) || "Something went wrong"
             if (modelResponse.length < 5) {
                 modelResponse = "AI Can you say it again please?"
+            } else {
+                modelResponse = `AI ${modelResponse.trim()}`; // Add "AI " prefix
             }
-            console.log(modelResponse)
-
 
             setUserchat((prev) => {
                 const updated = [...prev];
@@ -160,14 +184,19 @@ function ContentFirst() {
             setIsTyping(false);
         }
         catch (e) {
-            console.log("Error message")
+            console.error("Error generating response from Gemini API:", e);
+            setUserchat((prev) => {
+                const updated = [...prev];
+                updated.pop(); // remove "AI Typing..."
+                return [...updated, "AI I'm sorry, I encountered an error and cannot respond right now. Please try again later."];
+            });
+            setIsTyping(false);
         }
-
     };
+
     useEffect(() => {
         if (chatBodyRef.current) {
             chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
-
         }
     }, [userchat, show]);
 
@@ -270,7 +299,7 @@ function ContentFirst() {
                     />
                 </motion.div>
 
-                <div className="md:w-1/5 fixed bottom-8 z-50    md:right-60 lg:right-40 xl:right-30 2xl:right-10 order-3">
+                <div className="md:w-1/5 fixed bottom-8 z-50 md:right-60 lg:right-40 xl:right-30 2xl:right-10 order-3">
                     {!chat && (
                         <button
                             onClick={showChat}
@@ -313,40 +342,26 @@ function ContentFirst() {
                                         <FaRobot className="text-sm text-white" />
                                     </div>
                                     <div className="bg-purple-500/10 rounded-2xl rounded-tl-none p-3 text-sm text-white max-w-[80%]">
-                                        Hi there! Ask me anything.
+                                        Hi there! Ask me anything about Bipin Shrestha.
                                     </div>
                                 </div>
 
-                                {userchat.map((chat, i) => {
-                                    const [roleRaw, ...textParts] = chat.trim().split(" ");
-                                    const role = roleRaw.trim().toLowerCase();
-                                    let text = textParts.join(" ");
+                                {userchat.map((chatMessage, i) => {
+                                    // Ensure chatMessage is a string before splitting
+                                    const messageString = String(chatMessage).trim();
+                                    const isAIMessage = messageString.startsWith("AI ");
+                                    const displayMessage = isAIMessage ? messageString.substring(3) : messageString.substring(5); // Remove "AI " or "user " prefix
 
-                                    if (role === "ai" || role === "AI" || role === "AI " || role === "ai " || role === " AI") {
-                                        text = textParts.join(" ");
-                                        return (
-                                            <div key={i} className="flex gap-2 items-start">
-                                                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center flex-shrink-0">
-                                                    <FaRobot className="text-sm text-white" />
-                                                </div>
-                                                <div className="bg-purple-500/10 rounded-2xl rounded-tl-none p-3 text-sm text-white max-w-[80%]">
-                                                    {text}
-                                                </div>
+                                    return (
+                                        <div key={i} className={`flex gap-2 items-start ${isAIMessage ? '' : 'flex-row-reverse'}`}>
+                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${isAIMessage ? 'bg-gradient-to-r from-purple-500 to-blue-500' : 'bg-gradient-to-r from-blue-500 to-cyan-500'}`}>
+                                                {isAIMessage ? <FaRobot className="text-sm text-white" /> : <span className="text-sm text-white">You</span>}
                                             </div>
-                                        );
-                                    } else {
-                                        text = role + " " + text;
-                                        return (
-                                            <div key={i} className="flex flex-row-reverse gap-2 items-start">
-                                                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
-                                                    <span className="text-sm text-white">You</span>
-                                                </div>
-                                                <div className="bg-blue-500/10 rounded-2xl rounded-tr-none p-3 text-sm text-white max-w-[80%]">
-                                                    {text}
-                                                </div>
+                                            <div className={`rounded-2xl p-3 text-sm text-white max-w-[80%] ${isAIMessage ? 'bg-purple-500/10 rounded-tl-none' : 'bg-blue-500/10 rounded-tr-none'}`}>
+                                                {displayMessage}
                                             </div>
-                                        );
-                                    }
+                                        </div>
+                                    );
                                 })}
 
                                 {isTyping && (
@@ -367,13 +382,12 @@ function ContentFirst() {
                             <form onSubmit={handleform} className="p-4 border-t border-purple-500/20 bg-gradient-to-r from-purple-600/10 to-blue-500/10">
                                 <div className="flex gap-2 items-center">
                                     <input
-                                        ref={chatHistory}
-
+                                        ref={chatInputRef} // Use the new ref
                                         type="text"
                                         placeholder="Type your message..."
                                         className="flex-1 bg-white/5 border border-purple-500/20 rounded-xl px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/40"
                                     />
-                                    <button className="p-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+                                    <button type="submit" className="p-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
                                         <IoMdSend className="text-xl text-white" />
                                     </button>
                                 </div>
