@@ -80,10 +80,6 @@ function ContentFirst() {
     const chatBodyRef = useRef<any>([]);
     const [isTyping, setIsTyping] = useState(false);
 
-
-
-
-
     function show() {
         setText(spaceTime)
         setHide(!hide)
@@ -217,7 +213,7 @@ If asked "skills":
         
 
         
-        fetch("http://localhost:1010/chat", {
+        fetch("https://portfoliobackend-production-ccc7.up.railway.app/chat", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
