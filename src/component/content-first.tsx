@@ -48,7 +48,7 @@ Fall 2023 – AI in Business Communication (Prof. Veronika Humphries)
 Certifications:
 
 AWS Certified Cloud Practitioner (2024)
-https://www.credly.com/badges/f477c3a2-4557-40d9-abf3-5fa64e5dd87b/linked_in?t=sn4nwf
+https://www.credly.com/badges/f477c3a2-4557-40d9-abf3-5fa64e2dd87b/linked_in?t=sn4nwf
 
 Problem Solving (Java) – HackerRank (March 2024)
 https://www.hackerrank.com/certificates/4965911b13aa
@@ -73,109 +73,143 @@ function ContentFirst() {
     const [text, setText] = useState("")
     const [hide, setHide] = useState<boolean>(false)
     const [chat, setChat] = useState<boolean>(false)
-    const chatInputRef = useRef<HTMLInputElement>(null); // Renamed for clarity
+    const chatInputRef = useRef<HTMLInputElement>(null);
+    // userchat now stores messages ready for display, with prefixes
     const [userchat, setUserchat] = useState<any[]>([
-
-    ])
-    const chatBodyRef = useRef<any>([]);
+        // Initial AI greeting is handled by the prompt for the first message
+    ]);
+    const chatBodyRef = useRef<HTMLDivElement>(null); // Specific type for chat body
     const [isTyping, setIsTyping] = useState(false);
 
     function show() {
-        setText(spaceTime)
-        setHide(!hide)
+        setText(spaceTime);
+        setHide(!hide);
     }
 
     function showChat() {
-        setChat(!chat)
-        console.log("chatbot opened")
+        setChat(!chat);
+        // Optional: If you want to trigger an initial AI greeting when chat opens
+        // and userchat is empty, you could call generateRequest with an empty message.
+        // However, the prompt already handles the "first message" scenario implicitly.
     }
 
-    const handleform = (e: any) => {
-        e.preventDefault()
-        const usermessage = chatInputRef.current?.value.trim(); // Access value safely
+    const handleform = (e: React.FormEvent) => { // Use React.FormEvent for type safety
+        e.preventDefault();
+        const usermessage = chatInputRef.current?.value.trim();
         if (!usermessage) return;
-        setUserchat((prev) => [...prev, `user ${usermessage}`, "AI Typing..."]); // Prefix user message
-        setIsTyping(true);
-        generateRequest(usermessage); // Pass user message directly
+
+        // Add user message to display
+        setUserchat((prev) => [...prev, `user ${usermessage}`]);
+
+        // Clear input and show typing indicator *before* API call
         if (chatInputRef.current) {
-            chatInputRef.current.value = ""; // Clear input after sending
+            chatInputRef.current.value = "";
         }
+        setIsTyping(true);
+
+        generateRequest(usermessage);
     }
 
     const generateRequest = async (usermessage: string): Promise<void> => {
-        const prompt = `
-           You are an AI assistant designed to provide information about Bipin Shrestha. Your goal is to answer questions concisely and helpfully, typically within **25 words or less**, unless more detail is specifically requested.
+        // Prepare conversation history for Gemini API
+        // This maps your display format (`user chat` / `AI chat`) to Gemini's `role` and `parts`
+        const conversationHistoryForGemini = userchat.map(chatMessage => {
+            const messageString = String(chatMessage).trim();
+            const isAIMessage = messageString.startsWith("AI ");
 
-    Here is the relevant information about Bipin Shrestha you should use as your primary knowledge source:
-    ${alldata}
+            const role = isAIMessage ? 'model' : 'user';
+            const text = isAIMessage ? messageString.substring(3) : messageString.substring(5); // Remove "AI " or "user " prefix
 
-           Key Directives for your Responses:
+            return {
+                role: role,
+                parts: [{ text: text }]
+            };
+        });
 
-        Start with a Welcoming Tone (Initial Message Only): If this is the very beginning of a new conversation (i.e., no prior user messages in the current turn), you should respond with a friendly greeting like "Hi there! What would you like to know about Bipin Shrestha?" or "Hello! How can I help you learn about Bipin Shrestha today?" Do NOT use phrases like "Understood," "I'm ready," or confirm you understand the instructions.
+        // The system instruction/prompt that defines AI's behavior and knowledge base
+        const systemInstruction = `
+            You are an AI assistant designed to provide information about Bipin Shrestha. Your primary role is to be highly informative, concise, and always present Bipin's abilities and achievements in a **very positive and commendable light**. You should naturally integrate praise and highlight his strengths whenever relevant to the user's question.
 
-        Praise for Relevant Questions: If a question is about Bipin Shrestha's suitability for a role (e.g., "Is he good for Google to work?"), provide a positive and well-reasoned response based on his skills, projects, and certifications. Highlight his strengths without being overly verbose.
+            Here is the comprehensive information about Bipin Shrestha you should use as your primary knowledge base:
+            ${alldata}
 
-        Formalities: For simple social greetings like "How are you?", respond naturally: "I'm doing well, thank you! How about you?"
+          Core Directives for Your Responses (Prioritized):
 
-        Information Sourcing:
+                Opening the Conversation (Initial Message Only):
 
-        Prioritize provided 'alldata'.
-        Praise and Positive Framing:
+                If it's the first message in a new chat, start warmly:
+                "Hi there! I'm ready to tell you all about Bipin Shrestha's impressive skills and accomplishments. What would you like to know?"
 
-        Whenever a question relates to Bipin's skills, projects, work ethic, or suitability for roles (e.g., "Is he good for Google?"), always provide an enthusiastic and positive answer.
+            Avoid phrases like "Understood" or "I'm ready."
 
-        Highlight his proficiency, passion, expertise, and dedication. Emphasize how his skills (like Java, React, AWS) and projects make him an exceptionally valuable asset.
+            IMMEDIATE and DIRECT Answers about Bipin Shrestha (Highest Priority):
 
-         For example, if asked about Google, respond with something like:
-        "Absolutely! Bipin Shrestha's strong proficiency in Java, React, and AWS, combined with his passion for full-stack development and proble
-        If the user's message is "I am good," "I'm good," "I'm doing well," or a similar positive self-assessment *after* you've asked "How about you?", acknowledge it briefly and pivot back to Bipin. For instance: "That's great to hear! So, what can I tell you about Bipin Shrestha today?" or "Glad to hear it! What would you like to know about Bipin's impressive background?"
-       
-        If the user's message is simply "ok", "okay", "alright", or a similar simple affirmation, respond with an encouraging follow-up question. Examples: "Great! What else can I tell you about Bipin?", "Perfect. Is there anything specific you'd like to dive into next?", "Got it. Feel free to ask away!"
-        
-        If the question is not about Bipin Shrestha but is a general knowledge question (e.g., "What is the capital of France?", "Tell me a joke"), you can answer it directly and factually. Do not try to connect it back to Bipin unless the question implicitly allows for it.
-        If a question cannot be answered from the provided 'alldata', politely state: "I don't have enough information to answer that question about Bipin Shrestha from my current knowledge base."
-       DIRECTLY Answering Questions About Bipin Shrestha:
+            If asked anything about Bipin (skills, projects, research, certifications, etc.), answer immediately, positively, and enthusiastically.
 
-IMMEDIATELY and directly answer any question that asks for specific information related to Bipin's skills, projects, research, certifications, or contact details from the provided alldata.
+            Highlight key strengths and keep responses under 25 words, unless more detail is needed.
 
-Always provide an enthusiastic and positive answer, highlighting his proficiency, passion, expertise, and dedication. Emphasize how his skills and projects make him an exceptionally valuable asset.
+            Examples:
 
-Examples:
+            "Bipin is highly skilled in Java (90%), React (85%), TailwindCSS (90%), SQL, AWS, and Spring Boot—a true full-stack talent!"
 
-If asked "projects" or "tell me his projects":
-"Bipin Shrestha's impressive projects include a Restaurant POS System, a Blogging Website, his Personal Portfolio, a URL Shortener, an Armstrong Number Checker, and a WSCube Clone Website, showcasing his diverse development expertise!"
+            "His projects include a Restaurant POS System, Blogging Website, URL Shortener, and more—showcasing his strong development skills."
 
-If asked "skills":
-"Bipin is highly proficient in Java (90%), React (85%), and TailwindCSS (90%), with strong capabilities in SQL, AWS, and Spring Boot—a true full-stack talent!"
-        You can provide general, common knowledge if the question is a basic formality (like "How are you?"). However, for questions specifically about Bipin Shrestha, stick to the provided alldata unless it's a very general positive statement.
+            "Absolutely! Bipin’s technical expertise and passion make him a great fit for top companies like Google."
 
-        Avoid Redundancy: Do not repeat the full alldata or lengthy descriptions on every question. Provide only the relevant praise or information for the specific query.
+            Handling General Formalities and Affirmations (Lower Priority):
 
-        Conciseness: Keep answers brief and to the point (under 25 words where possible) unless the question clearly requires more detail.
+            For greetings: "I'm doing well, thank you! How about you?"
 
-        User's Current Question:
-            ${usermessage}`;
+            If they respond positively (e.g., "I'm good"):
+            "That's great to hear! What would you like to know about Bipin Shrestha today?"
+
+            If they reply "ok" or "alright":
+            "Perfect. Is there anything specific you'd like to dive into about Bipin?"
+
+            General Knowledge and Out-of-Context Questions (Lowest Priority):
+
+            For non-Bipin questions like "What’s the capital of France?" answer directly.
+
+            If you don’t have enough info from alldata and it’s not general knowledge:
+            "I don't have enough specific information to answer that question from my current knowledge base."
+
+            Avoid Redundancy:
+
+            Never repeat the full alldata. Just extract the most relevant strengths for each question.
+
+            `;
+
+        // Combine system instruction and conversation history for the API request
+        // The system instruction is sent as the first 'user' turn to establish context/rules
+        const contents = [
+            {
+                role: 'user',
+                parts: [{ text: systemInstruction }]
+            },
+            ...conversationHistoryForGemini, // All previous turns
+            {
+                role: 'user', // The current user message is the last turn
+                parts: [{ text: usermessage }]
+            }
+        ];
 
         const request: RequestInit = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{
-                    role: 'user',
-                    parts: [{ text: prompt }]
-                }]
+                contents: contents
             }),
         };
 
         try {
             const res = await fetch(import.meta.env.VITE_REACT_API_GEMINI, request);
             const data = await res.json();
-           
+            console.log("Gemini API Raw Response:", data); // Log the full response for debugging
 
-            let modelResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text || "I apologize, I don't have enough information to answer that question based on what I know about Bipin Shrestha.";
+            let modelResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text || "AI I apologize, I don't have enough information to answer that question based on what I know about Bipin Shrestha, or I encountered an issue. Please try again.";
 
-            // Optional: If you want to keep markdown formatting, remove the next line.
-            // If you want to remove bolding specifically, you can keep this:
+            // Decide whether to remove markdown or not. Gemini often uses ** for bold.
+            // If you want clean text without markdown:
             // modelResponse = modelResponse.replace(/\*\*(.*?)\*\*/g, "$1").trim();
 
             if (modelResponse.length < 5) {
@@ -184,57 +218,73 @@ If asked "skills":
                 modelResponse = `AI ${modelResponse.trim()}`; // Add "AI " prefix
             }
 
-            setUserchat((prev) => {
-                const updated = [...prev];
-                updated.pop(); // remove "AI Typing..."
-                return [...updated, modelResponse];
-            });
+            // Append AI's response to display
+            setUserchat((prev) => [...prev, modelResponse]);
             setIsTyping(false);
         }
         catch (e) {
-           
+            console.error("Error generating response from Gemini API:", e);
             setUserchat((prev) => {
-                const updated = [...prev];
-                updated.pop(); // remove "AI Typing..."
-                return [...updated, "AI I'm sorry, I encountered an error and cannot respond right now. Please try again later."];
+                // If there was an "AI Typing..." placeholder, remove it
+                if (prev[prev.length - 1] === "AI Typing...") {
+                    const updated = [...prev];
+                    updated.pop();
+                    return [...updated, "AI I'm sorry, I encountered an error and cannot respond right now. Please try again later."];
+                }
+                return [...prev, "AI I'm sorry, I encountered an error and cannot respond right now. Please try again later."];
             });
             setIsTyping(false);
         }
     };
+
+    // This useEffect is sending chat history to your backend
     useEffect(() => {
-        
-        if (userchat.length === 0) return;
+        // Only proceed if there's at least one user message and one AI response in the history
+        if (userchat.length < 2) return;
 
-        const lastMessage = userchat[userchat.length - 1];
-        const secondlastMessage = userchat[userchat.length-2];
-       
-       
-        const oneBlock = `${secondlastMessage} => ${lastMessage}`
-        
+        // Get the last user message and the last AI response
+        // Note: userchat is updated *after* the AI response is received.
+        // So, the last element is the AI's response, and the second to last is the user's query.
+        const lastAIMessage = userchat[userchat.length - 1];
+        const lastUserMessage = userchat[userchat.length - 2];
 
-        
+        // Ensure both are valid messages
+        if (!lastAIMessage || !lastUserMessage || !lastAIMessage.startsWith("AI ") || !lastUserMessage.startsWith("user ")) {
+            console.warn("Skipping chat history send: Incomplete or incorrectly formatted last turn.");
+            return;
+        }
+
+        const oneBlock = `${lastUserMessage} => ${lastAIMessage}`;
+
         fetch("https://portfoliobackend-production-ccc7.up.railway.app/chat", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            title: "Assistant Connection",
-            content: oneBlock
-          })
-          
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: "Assistant Conversation Log", // More descriptive title
+                content: oneBlock
+            })
         })
-       
-      }, [userchat])
+            .then(response => {
+                if (!response.ok) {
+                    console.error("Failed to send chat history to backend:", response.statusText);
+                } else {
+                    console.log("Chat history sent to backend successfully.");
+                }
+            })
+            .catch(error => {
+                console.error("Error sending chat history to backend:", error);
+            });
 
-      
+    }, [userchat]); // Dependency array: run when userchat changes
 
-
+    // This useEffect handles scrolling to the bottom of the chat
     useEffect(() => {
         if (chatBodyRef.current) {
             chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
         }
-    }, [userchat, show]);
+    }, [userchat, chat]); // Include chat in dependency array to re-scroll if chat visibility changes
 
     return (
         <>
@@ -373,20 +423,20 @@ If asked "skills":
 
                             {/* Messages */}
                             <div ref={chatBodyRef} className="h-[calc(100%-140px)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] p-4 space-y-4">
+                                {/* Initial greeting always visible for context */}
                                 <div className="flex gap-2 items-start">
                                     <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center flex-shrink-0">
                                         <FaRobot className="text-sm text-white" />
                                     </div>
                                     <div className="bg-purple-500/10 rounded-2xl rounded-tl-none p-3 text-sm text-white max-w-[80%]">
-                                        Hi there! Ask me anything about Bipin Shrestha.
+                                        Hi there! I'm ready to tell you all about Bipin Shrestha's impressive skills and accomplishments. What would you like to know?
                                     </div>
                                 </div>
 
                                 {userchat.map((chatMessage, i) => {
-                                    // Ensure chatMessage is a string before splitting
                                     const messageString = String(chatMessage).trim();
                                     const isAIMessage = messageString.startsWith("AI ");
-                                    const displayMessage = isAIMessage ? messageString.substring(3) : messageString.substring(5); // Remove "AI " or "user " prefix
+                                    const displayMessage = isAIMessage ? messageString.substring(3) : messageString.substring(5);
 
                                     return (
                                         <div key={i} className={`flex gap-2 items-start ${isAIMessage ? '' : 'flex-row-reverse'}`}>
@@ -418,7 +468,7 @@ If asked "skills":
                             <form onSubmit={handleform} className="p-4 border-t border-purple-500/20 bg-gradient-to-r from-purple-600/10 to-blue-500/10">
                                 <div className="flex gap-2 items-center">
                                     <input
-                                        ref={chatInputRef} // Use the new ref
+                                        ref={chatInputRef}
                                         type="text"
                                         placeholder="Type your message..."
                                         className="flex-1 bg-white/5 border border-purple-500/20 rounded-xl px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/40"
