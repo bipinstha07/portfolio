@@ -174,7 +174,7 @@ If asked "skills":
         try {
             const res = await fetch(import.meta.env.VITE_REACT_API_GEMINI, request);
             const data = await res.json();
-            console.log("Gemini API Response:", data); // Log the full response
+           
 
             let modelResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text || "I apologize, I don't have enough information to answer that question based on what I know about Bipin Shrestha.";
 
@@ -196,7 +196,7 @@ If asked "skills":
             setIsTyping(false);
         }
         catch (e) {
-            console.error("Error generating response from Gemini API:", e);
+           
             setUserchat((prev) => {
                 const updated = [...prev];
                 updated.pop(); // remove "AI Typing..."
@@ -211,8 +211,7 @@ If asked "skills":
 
         const lastMessage = userchat[userchat.length - 1];
         const secondlastMessage = userchat[userchat.length-2];
-        console.log(secondlastMessage)
-        console.log(lastMessage)
+       
        
         const oneBlock = `${secondlastMessage} => ${lastMessage}`
         
