@@ -205,6 +205,35 @@ If asked "skills":
             setIsTyping(false);
         }
     };
+    useEffect(() => {
+        
+        if (userchat.length === 0) return;
+
+        const lastMessage = userchat[userchat.length - 1];
+        const secondlastMessage = userchat[userchat.length-2];
+        console.log(secondlastMessage)
+        console.log(lastMessage)
+       
+        const oneBlock = `${secondlastMessage} => ${lastMessage}`
+        
+
+        
+        fetch("http://localhost:1010/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            title: "Assistant Connection",
+            content: oneBlock
+          })
+          
+        })
+       
+      }, [userchat])
+
+      
+
 
     useEffect(() => {
         if (chatBodyRef.current) {
