@@ -386,7 +386,7 @@ function ContentFirst() {
                     transition={{ duration: 0.5, delay: 0.5 }}
                     className="md:w-1/5 order-1 md:order-2 md:ml-35 relative group"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-r  from-cyan-500/20 to-purple-500/20 rounded-full opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500" />
                     <motion.img
                         onClick={show}
                         initial={{ y: -20 }}
@@ -399,7 +399,7 @@ function ContentFirst() {
                                 repeatType: 'reverse' as const,
                             }
                         }}
-                        className="w-50 md:w-[600px] relative hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all duration-300"
+                        className="w-50 md:w-[600px] relative hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]    transition-all duration-300"
                         src={person}
                         alt="Bipin Shrestha"
                     />
