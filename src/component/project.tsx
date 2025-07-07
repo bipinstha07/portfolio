@@ -42,7 +42,7 @@ function Project() {
         },
         {
             title: "Armstrong Number Checker",
-            description: "Quickly verify if a number is an Armstrong number.",
+            description: "Quickly verify if a number is an Armstrong number. This simple yet efficient tool takes user input and determines whether the number equals the sum of its digits each raised to the power of the number of digits.",
             technology: "HTML CSS Javascript",
             image: armstrong,
             link:'https://bipinstha07.github.io/Armstrong/'
