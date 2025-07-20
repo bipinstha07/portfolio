@@ -1,3 +1,4 @@
+
 import Connect from "./component/connect"
 import ContentFirst from "./component/content-first"
 import Education from "./component/education"
@@ -22,6 +23,8 @@ function App() {
           <Project />
           <Education />
           <Connect />
+          
+          
           
         </div>
       </div>

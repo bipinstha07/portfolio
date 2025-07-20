@@ -372,9 +372,13 @@ function ContentFirst() {
                         animate='visible'
                         className="text-end mt-4 mb md:mt-20"
                     >
-                        <a href="https://www.linkedin.com/in/bipin-shrestha-4baba01a0/" target="_blank">
-                            <Button className="!bg-transparent !border-cyan-400 !text-cyan-400 hover:!shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:!text-cyan-300 hover:!border-cyan-300 !transition-all !duration-300 flex items-center gap-2">
-                                Let's Connect <FaLongArrowAltRight className="group-hover:translate-x-2 transition-transform" />
+                        <a href="https://www.linkedin.com/in/bipin-shrestha-4baba01a0/" target="_blank" className="group">
+                            <Button className="relative !bg-transparent !border-cyan-400 !text-cyan-400 hover:!shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:!text-white !transition-all !duration-300 flex items-center gap-2 overflow-hidden">
+                                <span className="relative z-10">Let's Connect</span>
+                                <FaLongArrowAltRight className="relative z-10 group-hover:translate-x-2 transition-transform" />
+                                
+                                {/* Slide color animation background */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-500 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
                             </Button>
                         </a>
                     </motion.div>
@@ -399,7 +403,7 @@ function ContentFirst() {
                                 repeatType: 'reverse' as const,
                             }
                         }}
-                        className="w-50 md:w-[600px] relative hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]    transition-all duration-300"
+                        className="w-50 ml-[120px] md:ml-0 md:w-[600px] relative hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]    transition-all duration-300"
                         src={person}
                         alt="Bipin Shrestha"
                     />
