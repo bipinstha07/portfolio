@@ -308,9 +308,9 @@ function ContentFirst() {
 
     return (
         <>
-            <div className="flex md:pt-25 flex-wrap md:h-screen pt-0  relative">
+            <div className="flex   md:pt-25 flex-wrap md:h-screen pt-0  relative">
                 {/* Removing the gradient border lines */}
-                <div className="md:w-3/5 order-2 md:order-1 relative">
+                <div className="md:w-3/5 order-2 md:order-1 ">
                     <motion.p
                         variants={container(0.5)}
                         initial='hidden'
@@ -388,10 +388,9 @@ function ContentFirst() {
                     initial={{ x: 100, opacity: 0 }}
                     animate={{ x: 1, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
-                    className="md:w-1/5 order-1 md:order-2 md:ml-35 relative group"
+                    className="md:w-1/5 order-1 md:order-2 md:ml-35 "
                 >
-                    <div className="absolute inset-0 bg-gradient-to-r  from-cyan-500/20 to-purple-500/20 rounded-full opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500" />
-                    <motion.img
+                        <motion.img
                         onClick={show}
                         initial={{ y: -20 }}
                         animate={{
@@ -403,7 +402,7 @@ function ContentFirst() {
                                 repeatType: 'reverse' as const,
                             }
                         }}
-                        className="w-50 ml-[120px] md:ml-0 md:w-[600px] relative hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]    transition-all duration-300"
+                        className="w-50  mx-28  md:ml-0 md:w-[600px] relative hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]    transition-all duration-300"
                         src={person}
                         alt="Bipin Shrestha"
                     />
