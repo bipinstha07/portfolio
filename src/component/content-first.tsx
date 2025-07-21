@@ -3,6 +3,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaRobot } from "react-icons/fa";
 import { IoMdSend } from "react-icons/io";
 import { RxCrossCircled } from "react-icons/rx";
+import { FaDownload } from "react-icons/fa";
 
 import person from '../assets/person.png'
 import { motion } from "framer-motion";
@@ -372,6 +373,17 @@ function ContentFirst() {
                         animate='visible'
                         className="text-end mt-4 mb md:mt-20"
                     >
+
+                        <a href="Resume only.pdf"  download className="mr-2 group">
+                            <Button className="!bg-transparent !border-green-500 !text-green-500 hover:!text-white hover:!shadow-[0_0_20px_rgba(34,197,94,0.5)] flex items-center gap-2 relative overflow-hidden">
+                                <span className="relative z-10">Resume</span>
+                                <FaDownload className="relative z-10 transition-transform duration-100" />
+
+                                {/* Slide animation background */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-green-600 via-green-500 to-green-400 -translate-y-full group-hover:translate-y-0 transition-transform duration-200 ease-out"></div>
+                            </Button>
+                        </a>
+
                         <a href="https://www.linkedin.com/in/bipin-shrestha-4baba01a0/" target="_blank" className="group">
                             <Button className="relative !bg-transparent !border-cyan-400 !text-cyan-400 hover:!shadow-[0_0_20px_rgba(34,211,238,0.5)] hover:!text-white !transition-all !duration-300 flex items-center gap-2 overflow-hidden">
                                 <span className="relative z-10">Let's Connect</span>
