@@ -54,7 +54,7 @@ export default function Skills() {
 
             <div className='flex flex-col md:flex-row gap-10 mb-35 items-center justify-between'>
 
-                <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className="w-full  max-w-md md:w-4/5 space-y-4 p-4 bg-[#0d0d0d] rounded-xl">
+                <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className="w-full  max-w-md md:w-4/5 space-y-4 p-4 border border-[#2c2c2c] hover:border-gray-600 rounded-xl">
                     {skills.map((skill, i) => (
                         <div key={skill.name}>
                             <div className="flex justify-between text-sm text-white mb-1">
