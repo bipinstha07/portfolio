@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <div className="relative overflow-x-hidden selection:bg-purple-500 selection:text-white text-white h-full w-full bg-slate-950">
-        {/* Minimal Toggle Button */}
+        {/* Minimal  d Toggle Button */}
         <button
           onClick={() => setShowGalaxy((v) => !v)}
           className="fixed top-3 right-3 z-20 p-2 bg-black/40 text-cyan-300 border border-cyan-700 rounded-full shadow hover:bg-cyan-900/40 transition-all duration-200 flex items-center justify-center"
