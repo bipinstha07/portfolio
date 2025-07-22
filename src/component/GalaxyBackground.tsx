@@ -1,14 +1,14 @@
 import React, { useMemo, useRef, useEffect, useState } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
 const GALAXY_PARAMS = {
   count: typeof window !== 'undefined' && window.innerWidth >= 768 ? 40000 : 35000,
-  radius: 13,
+  radius: 13, 
   insideColor: '#00eaff',
   outsideColor: '#0a1a2f',
-};
-
+}; 
+ 
 function Galaxy() {
   const pointsRef = useRef<THREE.Points>(null);
   const galaxy = useMemo(() => {

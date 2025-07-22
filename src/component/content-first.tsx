@@ -4,7 +4,7 @@ import { FaRobot } from "react-icons/fa";
 import { IoMdSend } from "react-icons/io";
 import { RxCrossCircled } from "react-icons/rx";
 import { FaDownload } from "react-icons/fa";
-import { FiEyeOff } from "react-icons/fi";
+
 
 import person from '../assets/person.png'
 import { motion } from "framer-motion";
