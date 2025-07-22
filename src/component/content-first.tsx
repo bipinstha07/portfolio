@@ -4,6 +4,7 @@ import { FaRobot } from "react-icons/fa";
 import { IoMdSend } from "react-icons/io";
 import { RxCrossCircled } from "react-icons/rx";
 import { FaDownload } from "react-icons/fa";
+import { FiEyeOff } from "react-icons/fi";
 
 import person from '../assets/person.png'
 import { motion } from "framer-motion";
@@ -420,41 +421,41 @@ function ContentFirst() {
                     />
                 </motion.div>
 
-                <div className="md:w-1/5 fixed bottom-8 z-50 md:right-60 lg:right-40 xl:right-30 2xl:right-10 order-3">
-                    {!chat && (
-                        <button
-                            onClick={showChat}
-                            className="p-4 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 float-right"
-                        >
-                            <FaRobot className="text-2xl text-white" />
-                        </button>
-                    )}
+                    <div className="md:w-1/5 fixed bottom-8 z-50 md:right-60 lg:right-40 xl:right-30 2xl:right-10 order-3">
+                        {!chat && (
+                            <button
+                                onClick={showChat}
+                                className="p-4 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 float-right"
+                            >
+                                <FaRobot className="text-2xl text-white" />
+                            </button>
+                        )}
 
-                    {chat && (
-                        <div className="w-[380px] h-[600px] bg-gradient-to-b from-gray-900/95 to-black/95 backdrop-blur-sm rounded-2xl overflow-hidden border border-purple-500/20 shadow-xl">
-                            {/* Header */}
-                            <div className="p-4 bg-gradient-to-r from-purple-600/10 to-blue-500/10 border-b border-purple-500/20">
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
-                                            <FaRobot className="text-xl text-white" />
+                        {chat && (
+                            <div className="w-[380px] h-[600px] bg-gradient-to-b from-gray-900/95 to-black/95 backdrop-blur-sm rounded-2xl overflow-hidden border border-purple-500/20 shadow-xl">
+                                {/* Header */}
+                                <div className="p-4 bg-gradient-to-r from-purple-600/10 to-blue-500/10 border-b border-purple-500/20">
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
+                                                <FaRobot className="text-xl text-white" />
+                                            </div>
+                                            <div>
+                                                <h3 className="font-semibold text-white">AI Assistant</h3>
+                                                <span className="text-xs text-green-400 flex items-center gap-1">
+                                                    <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                                                    Online
+                                                </span>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h3 className="font-semibold text-white">AI Assistant</h3>
-                                            <span className="text-xs text-green-400 flex items-center gap-1">
-                                                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                                                Online
-                                            </span>
-                                        </div>
+                                        <button
+                                            onClick={showChat}
+                                            className="text-gray-400 hover:text-red-400 transition-colors"
+                                        >
+                                            <RxCrossCircled className="text-2xl" />
+                                        </button>
                                     </div>
-                                    <button
-                                        onClick={showChat}
-                                        className="text-gray-400 hover:text-red-400 transition-colors"
-                                    >
-                                        <RxCrossCircled className="text-2xl" />
-                                    </button>
                                 </div>
-                            </div>
 
                             {/* Messages */}
                             <div ref={chatBodyRef} className="h-[calc(100%-140px)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] p-4 space-y-4">
