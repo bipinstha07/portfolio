@@ -4,6 +4,7 @@ import clone from '../assets/webclone.png'
 import armstrong from  '../assets/armstrong.png'
 import portfolio from '../assets/portfolio.png'
 import blog from '../assets/blog.png'
+import train from '../assets/train.png'
 
 import { ArrowRightOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
@@ -19,6 +20,14 @@ function Project() {
             technology: "React Node.js Tailwind Typescript Yarn Vite JWT MongoDB Express",
             link:'null'
         },
+        {
+            title: "Train Management System (Backend)",
+            description: "Backend API built using Java Spring Boot for managing train routes, stations, schedules, and bookings with secure authentication.",
+            image: train, 
+            technology: "Java Spring Boot Hibernate Spring Security JWT MySQL REST API",
+            link: "https://github.com/bipinstha07/TrainSystem"
+          },
+        
         {
             title: "Blogging Website",
             description: "A full-featured blogging platform , built for efficient content management and user interaction",
