@@ -1,10 +1,10 @@
 import url from '../assets/url.png'
-import ecom from '../assets/ecom.png'
 import clone from '../assets/webclone.png'
 import armstrong from  '../assets/armstrong.png'
 import portfolio from '../assets/portfolio.png'
 import blog from '../assets/blog.png'
 import train from '../assets/train.png'
+import hotel from '../assets/hotel.png'
 
 import { ArrowRightOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
@@ -14,11 +14,11 @@ import { motion } from 'framer-motion'
 function Project() {
     const project = [
         {
-            title: "Restaurant POS System",
-            description: "(Upon completion) A comprehensive POS platform equipped with all necessary features for efficient business operations.",
-            image: ecom,
-            technology: "React Node.js Tailwind Typescript Yarn Vite JWT MongoDB Express",
-            link:'null'
+            title: "Hotel Booking System Frontend",
+            description: "A hotel booking platform built with Next.js, allowing customers to search, log in, and book rooms. Designed for privately-owned or large hotels to manage bookings through a user-friendly website.",
+            image: hotel,
+            technology: "Next.js Tailwind Typescript JWT",
+            link:'https://github.com/bipinstha07/Hotel_Booking_Frontend'
         },
         {
             title: "Train Management System (Backend)",
