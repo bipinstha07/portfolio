@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import App from "../App";
-import Resume from "../resume/resume";
+import Resume from "../resume/Resume";
 
 const routerObj  = createBrowserRouter(
     [
