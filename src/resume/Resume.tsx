@@ -17,7 +17,7 @@ export default function Resume() {
                 Home
               </a>
               <a href="Resume only.pdf" download>
-              <button className="flex items-center gap-1 px-2 py-0.5 border border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent rounded text-xs">
+              <button className="flex items-center gap-1 px-2 cursor-pointer py-0.5 border border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent rounded text-xs">
                 <Download className="w-3 h-3" />
                 Download Resume
               </button>
