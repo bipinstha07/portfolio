@@ -334,7 +334,7 @@ function ContentFirst() {
                         className="md:mb-8 mb-4 text-xl md:text-2xl font-mono relative"
                     >
                         <span className="bg-gradient-to-r from-purple-600 via-cyan-400 to-[#39ff14] text-transparent bg-clip-text">
-                            FULL_STACK_DEVELOPER
+                            FULL_STACK_JAVA_AND_AWS_DEVELOPER
                         </span>
                         <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-purple-600/50 to-cyan-400/50" />
                     </motion.p>
