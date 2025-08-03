@@ -1,29 +1,10 @@
-import { useEffect, useState } from 'react';
 import { FaNodeJs, FaReact } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
-import { SiHibernate, SiJavascript, SiKubernetes, SiMongodb, SiMysql, SiSpringboot } from "react-icons/si";
+import { FaUbuntu } from "react-icons/fa6";
+import { SiHibernate, SiJavascript, SiKubernetes, SiMongodb, SiMysql, SiSpringboot, SiDocker, SiLinux, SiAmazonec2, SiAwslambda, SiApachekafka, SiTypescript, SiGit } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-import { RiTailwindCssFill } from 'react-icons/ri';
+import { RiTailwindCssFill, RiNextjsFill } from 'react-icons/ri';
 import { motion } from 'framer-motion';
-
-
-const skills = [
-    { name: 'Java', level: 90 },
-    { name: 'React', level: 85 },
-    { name: 'Spring Boot', level: 70 },
-    { name: 'SQL', level: 82 },
-    { name: 'AWS', level: 75 },
-    { name: 'TailWindCSS', level: 90 },
-];
-
-const COLORS = [
-    '#ff6f00',   // Java – Neon Orange
-    '#00e8f8',   // React – Neon Cyan
-    '#00ff66',   // Spring Boot – Neon Green
-    '#00b3ff',   // SQL – Neon Blue
-    '#ffcc00',   // AWS – Neon Yellow-Orange
-    '#4ef5ff',   // TailWindCSS – Neon Teal
-];
 
 const techVar = (duration: number) => ({
     initial: { y: -10 },
@@ -38,44 +19,22 @@ const techVar = (duration: number) => ({
     }
 })
 
-
 export default function Skills() {
-    const [animate, setAnimate] = useState(false);
-
-    useEffect(() => {
-        setTimeout(() => setAnimate(true), 100); // trigger animation after mount
-    }, []);
-
     return (
         <>
-            <motion.div whileInView={{y:0,opacity:1}} initial={{y:-20,opacity:0}} transition={{duration:0.5}} className='text-center font-light mt-45  md:mt-0 text-4xl '>
-                Skills
-            </motion.div>
+            <motion.div 
+                whileInView={{y:0, opacity:1}} 
+                initial={{y:-20, opacity:0}} 
+                transition={{duration:0.5}} 
+                className="text-center relative mt-25 sm:mt-0 mb-8"
+            >
+                <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-500 to-cyan-300 mb-4">
+                    Skills & Expertise
+                </h2>
+                    </motion.div>
 
-            <div className='flex flex-col md:flex-row gap-10 mb-35 items-center justify-between'>
-
-                <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className="w-full  max-w-md md:w-4/5 space-y-4 p-4 border border-[#2c2c2c] hover:border-gray-600 rounded-xl">
-                    {skills.map((skill, i) => (
-                        <div key={skill.name}>
-                            <div className="flex justify-between text-sm text-white mb-1">
-                                <span>{skill.name}</span>
-                                <span>{skill.level}%</span>
-                            </div>
-                            <div className="w-full bg-[#2c2c2c] h-3 rounded-full overflow-hidden">
-                                <div
-                                    className="h-full rounded-full transition-all duration-1000 ease-out"
-                                    style={{
-                                        width: animate ? `${skill.level}%` : '0%',
-                                        backgroundColor: COLORS[i % COLORS.length],
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    ))}
-                </motion.div>
-                {/* Breaker */}
-
-                <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: 50 }} transition={{ duration: 0.5 }} className="flex  md:w-3/5 flex-wrap gap-4">
+            <div className='flex  sm:w-2/3 mx-auto justify-center mt-4 mb-35'>
+                <motion.div whileInView={{ x: 0, opacity: 1 }} initial={{ opacity: 0, x: 50 }} transition={{ duration: 0.5 }} className="flex flex-wrap gap-4 justify-center">
                     <div className="flex justify-center flex-wrap gap-4">
                         <motion.div variants={techVar(2)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-cyan-400">
                             <FaReact className="text-5xl text-cyan-400" />
@@ -129,14 +88,14 @@ export default function Skills() {
                         <motion.div variants={techVar(3.8)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-green-600">
                             <SiSpringboot className="text-5xl text-green-600" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
-                                20%
+                                80%
                             </div>
                         </motion.div>
 
                         <motion.div variants={techVar(2.7)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-blue-400">
                             <SiKubernetes className="text-5xl text-blue-400" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
-                                20%
+                                60%
                             </div>
                         </motion.div>
 
@@ -150,20 +109,80 @@ export default function Skills() {
                         <motion.div variants={techVar(2.9)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-purple-500">
                             <SiHibernate className="text-5xl text-purple-500" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
-                                0%
+                                80%
                             </div>
                         </motion.div>
 
+                        {/* New Icons */}
+                        <motion.div variants={techVar(2.1)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-orange-500">
+                            <SiDocker className="text-5xl text-orange-500" />
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                70%
+                            </div>
+                        </motion.div>
+
+                        <motion.div variants={techVar(3.3)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-yellow-500">
+                            <SiAmazonec2 className="text-5xl text-yellow-500" />
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                               91%
+                            </div>
+                        </motion.div>
+
+                        <motion.div variants={techVar(2.4)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-red-500">
+                            <SiAwslambda className="text-5xl text-red-500" />
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                75%
+                            </div>
+                        </motion.div>
+
+                        <motion.div variants={techVar(3.6)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-yellow-600">
+                            <SiLinux className="text-5xl text-yellow-600" />
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                75%
+                            </div>
+                        </motion.div>
+
+                        <motion.div variants={techVar(2.6)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-blue-800">
+                            <RiNextjsFill className="text-5xl text-blue-800" />
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                80%
+                            </div>
+                        </motion.div>
+
+                        <motion.div variants={techVar(3.4)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-orange-400">
+                            <FaUbuntu className="text-5xl text-orange-400" />
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                80%
+                            </div>
+                        </motion.div>
+
+                        <motion.div variants={techVar(2.8)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-purple-600">
+                            <SiApachekafka className="text-5xl text-purple-600" />
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                65%
+                            </div>
+                        </motion.div>
+
+                        <motion.div variants={techVar(2.2)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-blue-500">
+                            <SiTypescript className="text-5xl text-blue-500" />
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                80%
+                            </div>
+                        </motion.div>
+
+                        <motion.div variants={techVar(3.7)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-3 rounded-2xl transition-all duration-300 hover:border-orange-600">
+                            <SiGit className="text-5xl text-orange-600" />
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                85%
+                            </div>
+                        </motion.div>
+
+                       
+
+                        
+
                     </div>
-
-
-
                 </motion.div>
-
-
-
-
-
             </div>
         </>
     );
