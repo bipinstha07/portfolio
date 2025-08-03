@@ -99,7 +99,7 @@ export default function Education() {
                 <motion.div 
                     whileInView={{ y: 0, opacity: 1 }} 
                     initial={{ y: -20, opacity: 0 }} 
-                    transition={{ duration: 0.3 }} 
+                    transition={{ duration: 0.5 }} 
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-500 to-cyan-300 mb-4">
@@ -115,9 +115,9 @@ export default function Education() {
                         <motion.div 
                             key={index}
                             className="group relative bg-gradient-to-br from-gray-900/10 to-gray-800/10 backdrop-blur-[2px] border border-gray-700/50 rounded-xl overflow-hidden hover:border-cyan-600/50 transition-all duration-500"
-                            whileInView={{ x: 0, opacity: 1 }} 
-                            initial={{ x: -10, opacity: 0 }} 
-                            transition={{ duration: 0.4, delay:0.2 }}
+                            whileInView={{ y: 0, opacity: 1 }} 
+                            initial={{ y: -0, opacity: 0 }} 
+                            transition={{ duration: 0.6, delay:0.2 }}
                             
                         >
                             <div className="flex flex-col lg:flex-row">
@@ -149,7 +149,7 @@ export default function Education() {
                                     className="lg:w-3/4 p-6 ml-10"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: 100, opacity: 0 }} 
-                                    transition={{ duration: 0.3, delay: 0.2 }}
+                                    transition={{ duration: 0.6, delay: 0.2 }}
                                 >
                                     <div className="flex items-start justify-between mb-3">
                                         <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">

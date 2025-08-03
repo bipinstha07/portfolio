@@ -57,7 +57,7 @@ function Project() {
             title:"WSCube Clone Website",
             description:"A Fully Website",
             technology:"HTML CSS Javascript Bootstrap",
-            image:clone,
+            image:armstrong,
             link:'https://bipinstha07.github.io/wscube'
         }
 
@@ -71,7 +71,7 @@ function Project() {
                 <motion.div 
                     whileInView={{ y: 0, opacity: 1 }} 
                     initial={{ y: -20, opacity: 0 }} 
-                    transition={{ duration: 0.2 }} 
+                    transition={{ duration: 0.6 }} 
                     className="text-center mb-12"
                 >
                     <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-500 to-cyan-300 mb-3">
@@ -93,7 +93,7 @@ function Project() {
                                 opacity: 0 
                             }} 
                             transition={{ 
-                                duration: 0.2, 
+                                duration: 0.6, 
                                 delay: 0.2,
                                 ease: "easeOut"
                             }}
@@ -104,7 +104,7 @@ function Project() {
                                     className="lg:w-1/3 relative h-32 lg:h-auto overflow-hidden"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: -50, opacity: 0 }} 
-                                    transition={{ duration: 0.4, delay: 0.2 }}
+                                    transition={{ duration: 0.6, delay: 0.1 }}
                                 >
                                     <motion.img 
                                         className="w-[200px] h-3/3 mx-auto  object-cover transition-transform duration-500 group-hover:scale-100" 
@@ -119,7 +119,7 @@ function Project() {
                                     className="lg:w-2/3 p-4"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: 100, opacity: 0 }} 
-                                    transition={{ duration: 0.3, delay: 0.1 }}
+                                    transition={{ duration: 0.6, delay: 0.1 }}
                                 >
                                     <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
                                         {data.title}
@@ -182,8 +182,8 @@ function Project() {
                 <div className="mt-20">
                     <motion.div 
                         whileInView={{ y: 0, opacity: 1 }} 
-                        initial={{ y: -20, opacity: 0 }} 
-                        transition={{ duration: 0.5 }} 
+                        initial={{ y: 30, opacity: 0 }} 
+                        transition={{ duration: 0.6,delay:0.2 }} 
                         className="text-center mb-12"
                     >
                         <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-300 mb-3">
@@ -200,7 +200,7 @@ function Project() {
                             className="bg-gradient-to-br from-purple-900/10 to-pink-900/10 backdrop-blur-[2px] border border-purple-700/30 rounded-xl p-6"
                             whileInView={{ x: 0, opacity: 1 }} 
                             initial={{ x: -100, opacity: 0 }} 
-                            transition={{ duration: 0.6 }}
+                            transition={{ duration: 0.6,delay:0.2 }}
                         >
                             <div className="flex flex-col lg:flex-row gap-6">
                                 <div className="lg:w-1/4">
