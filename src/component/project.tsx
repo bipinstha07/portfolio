@@ -1,5 +1,4 @@
 import url from '../assets/url.png'
-import clone from '../assets/webclone.png'
 import armstrong from  '../assets/armstrong.png'
 import portfolio from '../assets/portfolio.png'
 import blog from '../assets/blog.png'
