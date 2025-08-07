@@ -65,14 +65,16 @@ function Project() {
             description: "A full-stack hotel booking system for privately-owned or large hotels, built with Spring Boot, Next.js, and AWS. Features include JWT-based auth, JPA Criteria filtering, MapStruct DTOs, Stripe payments, async emails, caching, and auditing. Deployed on AWS (EC2, RDS, S3, API Gateway, Elastic Beanstalk) with CI/CD via CodePipeline and CodeBuild.",
             images: [hb1, hb2, hb3, hb4, hb5, hb6, hb7, hb8],
             technology: "Spring Boot Next.js TailwindCSS TypeScript JWT Hibernate JPA MapStruct Stripe AWS EC2 RDS S3 API Gateway Elastic Beanstalk CodePipeline",
-            link:'https://github.com/bipinstha07/Hotel_Booking_Frontend'
+            link:'https://hotel-booking-frontend-rho.vercel.app/',
+            code:'https://github.com/bipinstha07/Hotel_Booking',
         },
         {
             title: "Train Management System (Backend)",
             description: "Backend API built using Java Spring Boot for managing train routes, stations, schedules, and bookings with secure authentication.",
             images: [train],
             technology: "Java Spring Boot Hibernate Spring Security JWT MySQL REST API",
-            link: "https://github.com/bipinstha07/TrainSystem"
+            link: "https://github.com/bipinstha07/TrainSystem",
+            code:'https://github.com/bipinstha07/TrainSystem'
           },
         
         {
@@ -80,34 +82,39 @@ function Project() {
             description: "A full-featured blogging platform , built for efficient content management and user interaction",
             images: [blog],
             technology: "Node.js Express Bootstrap EJS MongoDB crypto.createHmac (SHA-256 + Salt)",
-            link:'https://blog-3npo.onrender.com/'
+            link:'https://blog-3npo.onrender.com/',
+            code:'https://github.com/bipinstha07/Blog'
         },
         {
             title:"Personal Portfolio",
             description: "A professional personal portfolio showcasing skills, projects, and experience, built with modern web technologies for optimal performance.",
             images:[portfolio],
             technology:"React Tailwind Framer Typescript AI Assistance GEMINI",
-            link:''
+            link:'',
+            code:''
         },
         {
             title: "URL Shortener",
             description: "A simple and efficient URL shortening web app built using Node.js, Express, MongoDB, and EJS. It allows users to enter long URLs and generate short, shareable links. When a short link is accessed, it redirects to the original URL.",
             technology: "Node.js Express.js JWT EJS MongoDB ",
             images: [url],
-            link:'https://url-shortener-b0ag.onrender.com/'
+            link:'https://url-shortener-b0ag.onrender.com/',
+            code:'https://github.com/bipinstha07/URL_Shortener'
         },
         {
             title: "Armstrong Number Checker",
             description: "Quickly verify if a number is an Armstrong number. This simple yet efficient tool takes user input and determines whether the number equals the sum of its digits each raised to the power of the number of digits.",
             technology: "HTML CSS Javascript",
             images: [armstrong],
-            link:'https://bipinstha07.github.io/Armstrong/'
+            link:'https://bipinstha07.github.io/Armstrong/',
+            code:'https://github.com/bipinstha07/Armstrong'
         }, {
             title:"WSCube Clone Website",
             description:"A Fully Website",
             technology:"HTML CSS Javascript Bootstrap",
             images:[armstrong],
-            link:'https://bipinstha07.github.io/wscube'
+            link:'https://bipinstha07.github.io/wscube',
+            code:'https://github.com/bipinstha07/wscube'
         }
     ]
 
@@ -212,15 +219,15 @@ function Project() {
                                             </a>
                                         )}
                                         
-                                        {data.link && data.link.includes('github.com') && (
+                                        {data.code && data.code !== '' && (
                                             <a 
-                                                href={data.link} 
+                                                href={data.code} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-1 px-3 py-1.5 border border-gray-600 text-gray-300 rounded text-xs font-medium hover:border-gray-500 hover:text-white transition-all duration-300"
                                             >
                                                 <GithubOutlined className="text-xs" />
-                                                Code
+                                                GitHub
                                             </a>
                                         )}
                                     </div>
