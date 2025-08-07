@@ -12,10 +12,51 @@ import hb6 from '../assets/HotelBooking/hb6.png'
 import hb7 from '../assets/HotelBooking/hb7.png'
 import hb8 from '../assets/HotelBooking/hb8.png'
 
-import { GithubOutlined, LinkOutlined } from '@ant-design/icons'
-import { motion, time } from 'framer-motion'
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import { GithubOutlined, LinkOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
+
+// Image Gallery Component
+function ImageGallery({ images, title }: { images: string[], title: string }) {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const nextImage = () => {
+        console.log('Next clicked, current:', currentImageIndex, 'total:', images.length);
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevImage = () => {
+        console.log('Prev clicked, current:', currentImageIndex, 'total:', images.length);
+        setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+
+    return (
+        <div className="relative group">
+            <img
+                className="w-[380px] h-48 lg:h-60 mx-auto object-cover transition-transform duration-500 group-hover:scale-100 rounded"
+                src={images[currentImageIndex]}
+                alt={title + ' image ' + (currentImageIndex + 1)}
+            />
+            {/* Navigation Buttons */}
+            <button
+                onClick={prevImage}
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1 rounded-full opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 z-10"
+            >
+                <LeftOutlined className="text-xs" />
+            </button>
+            <button
+                onClick={nextImage}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1 rounded-full opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 z-10"
+            >
+                <RightOutlined className="text-xs" />
+            </button>
+            {/* Image Counter */}
+            <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded z-10">
+                {currentImageIndex + 1} / {images.length}
+            </div>
+        </div>
+    );
+}
 
 function Project() {
     const project = [
@@ -33,6 +74,7 @@ function Project() {
             technology: "Java Spring Boot Hibernate Spring Security JWT MySQL REST API",
             link: "https://github.com/bipinstha07/TrainSystem"
           },
+        
         {
             title: "Blogging Website",
             description: "A full-featured blogging platform , built for efficient content management and user interaction",
@@ -107,37 +149,16 @@ function Project() {
                             <div className="flex flex-col lg:flex-row">
                                 {/* Image Container - Left Side */}
                                 <motion.div 
-                                    className="lg:w-1/3 relative h-32 lg:h-auto overflow-hidden"
+                                    className="lg:w-1/3 relative h-42 lg:h-auto overflow-hidden"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: -50, opacity: 0 }} 
                                     transition={{ duration: 0.5, delay: 0.1 }}
                                 >
                                     {data.images.length > 1 ? (
-                                        <Carousel
-                                            responsive={{
-                                                superLargeDesktop: { breakpoint: { max: 4000, min: 1024 }, items: 1 },
-                                                desktop: { breakpoint: { max: 1024, min: 768 }, items: 1 },
-                                                tablet: { breakpoint: { max: 768, min: 464 }, items: 1 },
-                                                mobile: { breakpoint: { max: 464, min: 0 }, items: 1 }
-                                            }}
-                                            showDots={true}
-                                            infinite={true}
-                                            autoPlay={false}
-                                            arrows={true}
-                                            className="project-carousel"
-                                        >
-                                            {data.images.map((img, imgIdx) => (
-                                                <img
-                                                    key={imgIdx}
-                                                    className="w-[350px] h-48 lg:h-60 mx-auto object-cover transition-transform duration-500 group-hover:scale-100 rounded"
-                                                    src={img}
-                                                    alt={data.title + ' image ' + (imgIdx + 1)}
-                                                />
-                                            ))}
-                                        </Carousel>
+                                        <ImageGallery images={data.images} title={data.title} />
                                     ) : (
                                         <motion.img 
-                                            className="w-[350px] h-48 lg:h-60 mx-auto object-cover transition-transform duration-500 group-hover:scale-100" 
+                                            className="w-[390px] h-48 lg:h-60 mx-auto object-cover transition-transform duration-500 group-hover:scale-100" 
                                             src={data.images[0]} 
                                             alt={data.title}
                                         />
