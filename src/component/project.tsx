@@ -3,39 +3,47 @@ import armstrong from  '../assets/armstrong.png'
 import portfolio from '../assets/portfolio.png'
 import blog from '../assets/blog.png'
 import train from '../assets/train.png'
-import hotel from '../assets/hotel.png'
+import hb1 from '../assets/HotelBooking/hb1.png'
+import hb2 from '../assets/HotelBooking/hb2.png'
+import hb3 from '../assets/HotelBooking/hb3.png'
+import hb4 from '../assets/HotelBooking/hb4.png'
+import hb5 from '../assets/HotelBooking/hb5.png'
+import hb6 from '../assets/HotelBooking/hb6.png'
+import hb7 from '../assets/HotelBooking/hb7.png'
+import hb8 from '../assets/HotelBooking/hb8.png'
 
 import { GithubOutlined, LinkOutlined } from '@ant-design/icons'
-import { motion } from 'framer-motion'
+import { motion, time } from 'framer-motion'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 function Project() {
     const project = [
         {
-            title: "Hotel Booking System Frontend",
-            description: "A hotel booking platform built with Next.js, allowing customers to search, log in, and book rooms. Designed for privately-owned or large hotels to manage bookings through a user-friendly website.",
-            image: hotel,
-            technology: "Next.js Tailwind Typescript JWT",
+            title: "Hotel Booking Web Application",
+            description: "A full-stack hotel booking system for privately-owned or large hotels, built with Spring Boot, Next.js, and AWS. Features include JWT-based auth, JPA Criteria filtering, MapStruct DTOs, Stripe payments, async emails, caching, and auditing. Deployed on AWS (EC2, RDS, S3, API Gateway, Elastic Beanstalk) with CI/CD via CodePipeline and CodeBuild.",
+            images: [hb1, hb2, hb3, hb4, hb5, hb6, hb7, hb8],
+            technology: "Spring Boot Next.js TailwindCSS TypeScript JWT Hibernate JPA MapStruct Stripe AWS EC2 RDS S3 API Gateway Elastic Beanstalk CodePipeline",
             link:'https://github.com/bipinstha07/Hotel_Booking_Frontend'
         },
         {
             title: "Train Management System (Backend)",
             description: "Backend API built using Java Spring Boot for managing train routes, stations, schedules, and bookings with secure authentication.",
-            image: train, 
+            images: [train],
             technology: "Java Spring Boot Hibernate Spring Security JWT MySQL REST API",
             link: "https://github.com/bipinstha07/TrainSystem"
           },
-        
         {
             title: "Blogging Website",
             description: "A full-featured blogging platform , built for efficient content management and user interaction",
-            image: blog,
+            images: [blog],
             technology: "Node.js Express Bootstrap EJS MongoDB crypto.createHmac (SHA-256 + Salt)",
             link:'https://blog-3npo.onrender.com/'
         },
         {
             title:"Personal Portfolio",
             description: "A professional personal portfolio showcasing skills, projects, and experience, built with modern web technologies for optimal performance.",
-            image:portfolio,
+            images:[portfolio],
             technology:"React Tailwind Framer Typescript AI Assistance GEMINI",
             link:''
         },
@@ -43,23 +51,22 @@ function Project() {
             title: "URL Shortener",
             description: "A simple and efficient URL shortening web app built using Node.js, Express, MongoDB, and EJS. It allows users to enter long URLs and generate short, shareable links. When a short link is accessed, it redirects to the original URL.",
             technology: "Node.js Express.js JWT EJS MongoDB ",
-            image: url,
+            images: [url],
             link:'https://url-shortener-b0ag.onrender.com/'
         },
         {
             title: "Armstrong Number Checker",
             description: "Quickly verify if a number is an Armstrong number. This simple yet efficient tool takes user input and determines whether the number equals the sum of its digits each raised to the power of the number of digits.",
             technology: "HTML CSS Javascript",
-            image: armstrong,
+            images: [armstrong],
             link:'https://bipinstha07.github.io/Armstrong/'
         }, {
             title:"WSCube Clone Website",
             description:"A Fully Website",
             technology:"HTML CSS Javascript Bootstrap",
-            image:armstrong,
+            images:[armstrong],
             link:'https://bipinstha07.github.io/wscube'
         }
-
     ]
 
     
@@ -70,7 +77,7 @@ function Project() {
                 <motion.div 
                     whileInView={{ y: 0, opacity: 1 }} 
                     initial={{ y: -20, opacity: 0 }} 
-                    transition={{ duration: 0.6 }} 
+                    transition={{ duration: 0.5 }} 
                     className="text-center mb-12"
                 >
                     <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-500 to-cyan-300 mb-3">
@@ -92,8 +99,8 @@ function Project() {
                                 opacity: 0 
                             }} 
                             transition={{ 
-                                duration: 0.6, 
-                                delay: 0.2,
+                                duration: 0.5, 
+                                delay: 0.1,
                                 ease: "easeOut"
                             }}
                         >
@@ -103,13 +110,38 @@ function Project() {
                                     className="lg:w-1/3 relative h-32 lg:h-auto overflow-hidden"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: -50, opacity: 0 }} 
-                                    transition={{ duration: 0.6, delay: 0.1 }}
+                                    transition={{ duration: 0.5, delay: 0.1 }}
                                 >
-                                    <motion.img 
-                                        className="w-[200px] h-3/3 mx-auto  object-cover transition-transform duration-500 group-hover:scale-100" 
-                                        src={data.image} 
-                                        alt={data.title}
-                                    />
+                                    {data.images.length > 1 ? (
+                                        <Carousel
+                                            responsive={{
+                                                superLargeDesktop: { breakpoint: { max: 4000, min: 1024 }, items: 1 },
+                                                desktop: { breakpoint: { max: 1024, min: 768 }, items: 1 },
+                                                tablet: { breakpoint: { max: 768, min: 464 }, items: 1 },
+                                                mobile: { breakpoint: { max: 464, min: 0 }, items: 1 }
+                                            }}
+                                            showDots={true}
+                                            infinite={true}
+                                            autoPlay={false}
+                                            arrows={true}
+                                            className="project-carousel"
+                                        >
+                                            {data.images.map((img, imgIdx) => (
+                                                <img
+                                                    key={imgIdx}
+                                                    className="w-[350px] h-48 lg:h-60 mx-auto object-cover transition-transform duration-500 group-hover:scale-100 rounded"
+                                                    src={img}
+                                                    alt={data.title + ' image ' + (imgIdx + 1)}
+                                                />
+                                            ))}
+                                        </Carousel>
+                                    ) : (
+                                        <motion.img 
+                                            className="w-[350px] h-48 lg:h-60 mx-auto object-cover transition-transform duration-500 group-hover:scale-100" 
+                                            src={data.images[0]} 
+                                            alt={data.title}
+                                        />
+                                    )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                                 </motion.div>
 
@@ -118,7 +150,7 @@ function Project() {
                                     className="lg:w-2/3 p-4"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: 100, opacity: 0 }} 
-                                    transition={{ duration: 0.6, delay: 0.1 }}
+                                    transition={{ duration: 0.5, delay: 0.1 }}
                                 >
                                     <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
                                         {data.title}
@@ -182,7 +214,7 @@ function Project() {
                     <motion.div 
                         whileInView={{ y: 0, opacity: 1 }} 
                         initial={{ y: 30, opacity: 0 }} 
-                        transition={{ duration: 0.6,delay:0.2 }} 
+                        transition={{ duration: 0.5,delay:0.1 }} 
                         className="text-center mb-12"
                     >
                         <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-300 mb-3">
@@ -199,7 +231,7 @@ function Project() {
                             className="bg-gradient-to-br from-purple-900/10 to-pink-900/10 backdrop-blur-[2px] border border-purple-700/30 rounded-xl p-6"
                             whileInView={{ x: 0, opacity: 1 }} 
                             initial={{ x: -100, opacity: 0 }} 
-                            transition={{ duration: 0.6,delay:0.2 }}
+                            transition={{ duration: 0.5,delay:0.1 }}
                         >
                             <div className="flex flex-col lg:flex-row gap-6">
                                 <div className="lg:w-1/4">
@@ -227,7 +259,7 @@ function Project() {
                             className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-[2px] border border-blue-700/30 rounded-xl p-6"
                             whileInView={{ x: 0, opacity: 1 }} 
                             initial={{ x: 100, opacity: 0 }} 
-                            transition={{ duration: 0.6, delay: 0.1 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
                         >
                             <div className="flex flex-col lg:flex-row gap-6">
                                 <div className="lg:w-1/4">

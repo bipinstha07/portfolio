@@ -117,7 +117,7 @@ export default function Education() {
                             className="group relative bg-gradient-to-br from-gray-900/10 to-gray-800/10 backdrop-blur-[2px] border border-gray-700/50 rounded-xl overflow-hidden hover:border-cyan-600/50 transition-all duration-500"
                             whileInView={{ y: 0, opacity: 1 }} 
                             initial={{ y: -0, opacity: 0 }} 
-                            transition={{ duration: 0.6, delay:0.2 }}
+                            transition={{ duration: 0.6, delay:0.1 }}
                             
                         >
                             <div className="flex flex-col lg:flex-row">
@@ -126,7 +126,7 @@ export default function Education() {
                                     className="lg:w-1/4  sm:ml-20 relative  h-32 lg:h-auto overflow-hidden flex items-center justify-center p-6"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: -100, opacity: 0 }} 
-                                    transition={{ duration: 0.6, delay: 0.2}}
+                                    transition={{ duration: 0.6, delay: 0.1}}
                                 >
                                     <div className="relative w-24 h-24 lg:w-32 lg:h-32">
                                         <motion.img 
@@ -149,7 +149,7 @@ export default function Education() {
                                     className="lg:w-3/4 p-6 ml-10"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: 100, opacity: 0 }} 
-                                    transition={{ duration: 0.6, delay: 0.2 }}
+                                    transition={{ duration: 0.6, delay: 0.1 }}
                                 >
                                     <div className="flex items-start justify-between mb-3">
                                         <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
