@@ -130,7 +130,7 @@ function Project() {
                     </p>
                 </motion.div>
 
-                <div className="space-y-6 mb-16">
+                <div className="space-y-6 ml-4 mx-auto mb-16">
                     {project.map((data, index) => (
                         <motion.div 
                             key={index} 
@@ -149,7 +149,7 @@ function Project() {
                             <div className="flex flex-col lg:flex-row">
                                 {/* Image Container - Left Side */}
                                 <motion.div 
-                                    className="lg:w-1/3 relative h-42 lg:h-auto overflow-hidden"
+                                    className="lg:w-1/3 relative h-52 lg:h-auto overflow-hidden"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: -50, opacity: 0 }} 
                                     transition={{ duration: 0.5, delay: 0.1 }}
