@@ -95,7 +95,7 @@ const data = [
 export default function Education() {
     return (
         <>
-            <div className="container mx-auto px-4 py-16">
+            <div className="container mx-auto">
                 <motion.div 
                     whileInView={{ y: 0, opacity: 1 }} 
                     initial={{ y: -20, opacity: 0 }} 
@@ -114,7 +114,7 @@ export default function Education() {
                     {data.map((item, index) => (
                         <motion.div 
                             key={index}
-                            className="group relative bg-gradient-to-br from-gray-900/10 to-gray-800/10 backdrop-blur-[2px] border border-gray-700/50 rounded-xl overflow-hidden hover:border-cyan-600/50 transition-all duration-500"
+                            className="group  sm:w-2/3 mx-auto relative bg-gradient-to-br from-gray-900/10 to-gray-800/10 backdrop-blur-[2px] border border-gray-700/50 rounded-xl overflow-hidden hover:border-cyan-600/50 transition-all duration-500"
                             whileInView={{ y: 0, opacity: 1 }} 
                             initial={{ y: -0, opacity: 0 }} 
                             transition={{ duration: 0.6, delay:0.1 }}

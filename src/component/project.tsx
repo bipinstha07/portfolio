@@ -122,7 +122,7 @@ function Project() {
 
     return (
         <>
-            <div className="container mx-auto px-4 py-12">
+            <div className="container mx-auto py-12">
                 <motion.div 
                     whileInView={{ y: 0, opacity: 1 }} 
                     initial={{ y: -20, opacity: 0 }} 
@@ -137,12 +137,12 @@ function Project() {
                     </p>
                 </motion.div>
 
-                <div className="space-y-6 ml-4 mx-auto mb-16">
+                <div className="space-y-6 mx-auto mb-16">
                     {project.map((data, index) => (
                         <motion.div 
                             key={index} 
                             className="group relative bg-gradient-to-br from-gray-900/10 to-gray-800/10 backdrop-blur-[2px] border border-gray-700/50 rounded-xl overflow-hidden hover:border-gray-600/50 transition-all duration-500 hover:scale-[1.01]"
-                            whileInView={{ y: 0, opacity: 1 }} 
+                            whileInView={{ x: 0, opacity: 1 }} 
                             initial={{ 
                                 x: -10, 
                                 opacity: 0 
