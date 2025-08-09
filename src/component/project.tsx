@@ -11,6 +11,9 @@ import hb5 from '../assets/HotelBooking/hb5.png'
 import hb6 from '../assets/HotelBooking/hb6.png'
 import hb7 from '../assets/HotelBooking/hb7.png'
 import hb8 from '../assets/HotelBooking/hb8.png'
+import url1 from '../assets/Url Shortener/url1.png'
+import url2 from '../assets/Url Shortener/url2.png'
+import url3 from '../assets/Url Shortener/url3.png'
 
 import { GithubOutlined, LinkOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
@@ -64,7 +67,7 @@ function Project() {
             title: "Hotel Booking Web Application",
             description: "A full-stack hotel booking system for privately-owned or large hotels, built with Spring Boot, Next.js, and AWS. Features include JWT-based auth, JPA Criteria filtering, MapStruct DTOs, Stripe payments, async emails, caching, and auditing. Deployed on AWS (EC2, RDS, S3, API Gateway, Elastic Beanstalk) with CI/CD via CodePipeline and CodeBuild.",
             images: [hb1, hb2, hb3, hb4, hb5, hb6, hb7, hb8],
-            technology: "Spring Boot Next.js TailwindCSS TypeScript JWT Hibernate JPA MapStruct Stripe AWS EC2 RDS S3 API Gateway Elastic Beanstalk CodePipeline",
+            technology: "Spring_Boot Next.js TailwindCSS TypeScript JWT Hibernate JPA MapStruct Stripe AWS EC2 RDS S3 API Gateway Elastic Beanstalk CodePipeline",
             link:'https://hotel-booking-frontend-rho.vercel.app/',
             code:'https://github.com/bipinstha07/Hotel_Booking',
         },
@@ -96,8 +99,8 @@ function Project() {
         {
             title: "URL Shortener",
             description: "A simple and efficient URL shortening web app built using Node.js, Express, MongoDB, and EJS. It allows users to enter long URLs and generate short, shareable links. When a short link is accessed, it redirects to the original URL.",
-            technology: "Node.js Express.js JWT EJS MongoDB ",
-            images: [url],
+            technology: "Node.js Express.js JWT EJS MongoDB",
+            images: [url1, url2, url3],
             link:'https://url-shortener-b0ag.onrender.com/',
             code:'https://github.com/bipinstha07/URL_Shortener'
         },
