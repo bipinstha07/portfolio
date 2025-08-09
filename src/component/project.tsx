@@ -1,4 +1,3 @@
-import url from '../assets/url.png'
 import armstrong from  '../assets/armstrong.png'
 import portfolio from '../assets/portfolio.png'
 import blog from '../assets/blog.png'
@@ -67,6 +66,7 @@ function Project() {
             title: "Hotel Booking Web Application",
             description: "A full-stack hotel booking system for privately-owned or large hotels, built with Spring Boot, Next.js, and AWS. Features include JWT-based auth, JPA Criteria filtering, MapStruct DTOs, Stripe payments, async emails, caching, and auditing. Deployed on AWS (EC2, RDS, S3, API Gateway, Elastic Beanstalk) with CI/CD via CodePipeline and CodeBuild.",
             images: [hb1, hb2, hb3, hb4, hb5, hb6, hb7, hb8],
+            keypoints:["JWT-based authentication", "JPA Criteria filtering", "MapStruct DTOs", "Stripe payments", "Async emails", "Caching", "Auditing"],
             technology: "Spring_Boot Next.js TailwindCSS TypeScript JWT Hibernate JPA MapStruct Stripe AWS EC2 RDS S3 API Gateway Elastic Beanstalk CodePipeline",
             link:'https://hotel-booking-frontend-rho.vercel.app/',
             code:'https://github.com/bipinstha07/Hotel_Booking',
@@ -75,6 +75,7 @@ function Project() {
             title: "Train Management System (Backend)",
             description: "Backend API built using Java Spring Boot for managing train routes, stations, schedules, and bookings with secure authentication.",
             images: [train],
+            keypoints:["S", "Hibernate", "Spring Security", "JWT", "MySQL", "REST API"],
             technology: "Java Spring Boot Hibernate Spring Security JWT MySQL REST API",
             link: "https://github.com/bipinstha07/TrainSystem",
             code:'https://github.com/bipinstha07/TrainSystem'
@@ -159,7 +160,7 @@ function Project() {
                             <div className="flex flex-col lg:flex-row">
                                 {/* Image Container - Left Side */}
                                 <motion.div 
-                                    className="lg:w-1/3 relative h-52 lg:h-auto overflow-hidden"
+                                    className="lg:w-2/5 mt-10 relative sm:mb-10 h-52 lg:h-auto overflow-hidden"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: -50, opacity: 0 }} 
                                     transition={{ duration: 0.5, delay: 0.1 }}
@@ -191,50 +192,67 @@ function Project() {
                                         {data.description}
                                     </p>
 
-                                    {/* Technology Tags */}
-                                    <div className="flex flex-wrap gap-1 mb-4">
-                                        {data.technology.split(' ').slice(0, 15).map((tech, techIndex) => (
-                                            <span 
-                                                key={techIndex}
-                                                className="px-2 py-1 text-xs bg-gray-800/50 text-gray-300 rounded border border-gray-700/50 hover:border-cyan-500/50 transition-colors duration-300"
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-                                        {data.technology.split(' ').length > 4 && (
-                                            <span className="px-2 py-1 text-xs bg-gray-800/50 text-gray-300 rounded border border-gray-700/50">
-                                                +{data.technology.split(' ').length - 4}
-                                            </span>
-                                        )}
-                                    </div>
-
-                                    {/* Action Buttons */}
-                                    <div className="flex gap-2">
-                                        {data.link && data.link !== '' && (
-                                            <a 
-                                                href={data.link} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded text-xs font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
-                                            >
-                                                <LinkOutlined className="text-xs" />
-                                                Demo
-                                            </a>
-                                        )}
-                                        
-                                        {data.code && data.code !== '' && (
-                                            <a 
-                                                href={data.code} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-1 px-3 py-1.5 border border-gray-600 text-gray-300 rounded text-xs font-medium hover:border-gray-500 hover:text-white transition-all duration-300"
-                                            >
-                                                <GithubOutlined className="text-xs" />
-                                                GitHub
-                                            </a>
-                                        )}
-                                    </div>
+                                    {/* Key Points */}
+                                    {data.keypoints && data.keypoints.length > 0 && (
+                                        <div>
+                                            <h4 className="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h4>
+                                            <ul className="list-disc list-inside space-y-1">
+                                                {data.keypoints.map((point, pointIndex) => (
+                                                    <li key={pointIndex} className="text-gray-300 text-xs leading-relaxed">
+                                                        {point}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
                                 </motion.div>
+                            </div>
+
+                            {/* Technology Tags and Action Buttons - Below Image */}
+                            <div className="px-4  pb-4">
+                                {/* Technology Tags */}
+                                <div className="flex flex-wrap gap-1 mb-4">
+                                    {data.technology.split(' ').slice(0, 15).map((tech, techIndex) => (
+                                        <span 
+                                            key={techIndex}
+                                            className="px-2 py-1 text-xs bg-gray-800/50 text-gray-300 rounded border border-gray-700/50 hover:border-cyan-500/50 transition-colors duration-300"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                    {data.technology.split(' ').length > 4 && (
+                                        <span className="px-2 py-1 text-xs bg-gray-800/50 text-gray-300 rounded border border-gray-700/50">
+                                            +{data.technology.split(' ').length - 4}
+                                        </span>
+                                    )}
+                                </div>
+
+                                {/* Action Buttons */}
+                                <div className="flex gap-2">
+                                    {data.link && data.link !== '' && (
+                                        <a 
+                                            href={data.link} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded text-xs font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
+                                        >
+                                            <LinkOutlined className="text-xs" />
+                                            Demo
+                                        </a>
+                                    )}
+                                    
+                                    {data.code && data.code !== '' && (
+                                        <a 
+                                            href={data.code} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-1 px-3 py-1.5 border border-gray-600 text-gray-300 rounded text-xs font-medium hover:border-gray-500 hover:text-white transition-all duration-300"
+                                        >
+                                            <GithubOutlined className="text-xs" />
+                                            GitHub
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         </motion.div>
                     ))}
