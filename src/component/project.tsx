@@ -160,7 +160,7 @@ function Project() {
                             <div className="flex flex-col lg:flex-row">
                                 {/* Image Container - Left Side */}
                                 <motion.div 
-                                    className="lg:w-2/5 mt-10 relative sm:mb-10 h-52 lg:h-auto overflow-hidden"
+                                    className="lg:w-2/5 mt-10  relative sm:mb-10 h-52 lg:h-auto overflow-hidden"
                                     whileInView={{ x: 0, opacity: 1 }} 
                                     initial={{ x: -50, opacity: 0 }} 
                                     transition={{ duration: 0.5, delay: 0.1 }}
@@ -169,11 +169,16 @@ function Project() {
                                         <ImageGallery images={data.images} title={data.title} />
                                     ) : (
                                         <motion.img 
-                                            className="w-[390px] h-48 lg:h-60 mx-auto object-cover transition-transform duration-500 group-hover:scale-100" 
+                                            className=" h-48 lg:h-60 mx-auto object-contain transition-transform duration-500 group-hover:scale-100" 
                                             src={data.images[0]} 
                                             alt={data.title}
                                         />
-                                    )}
+                                        
+            
+
+                                    )
+                                    
+                                    } 
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                                 </motion.div>
 
