@@ -13,6 +13,14 @@ import hb8 from '../assets/HotelBooking/hb8.png'
 import url1 from '../assets/Url Shortener/url1.png'
 import url2 from '../assets/Url Shortener/url2.png'
 import url3 from '../assets/Url Shortener/url3.png'
+import sp1 from '../assets/Stock Prediction/sp1.png'
+import sp2 from '../assets/Stock Prediction/sp2.png'
+import sp3 from '../assets/Stock Prediction/sp3.png'
+import pf1 from '../assets/Portfolio/pf1.png'
+import pf2 from '../assets/Portfolio/pf2.png'
+import pf3 from '../assets/Portfolio/pf3.png'
+import pf4 from '../assets/Portfolio/pf4.png'
+import pf5 from '../assets/Portfolio/pf5.png'
 
 import { GithubOutlined, LinkOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
@@ -63,7 +71,7 @@ function ImageGallery({ images, title }: { images: string[], title: string }) {
 function Project() {
     const project = [
         {
-            title: "Hotel Booking Web Application",
+            title: "Hotel Booking Application",
             description: "A full-stack hotel booking system for privately-owned or large hotels, built with Spring Boot, Next.js, and AWS. Features include JWT-based auth, JPA Criteria filtering, MapStruct DTOs, Stripe payments, async emails, caching, and auditing. Deployed on AWS (EC2, RDS, S3, API Gateway, Elastic Beanstalk) with CI/CD via CodePipeline and CodeBuild.",
             images: [hb1, hb2, hb3, hb4, hb5, hb6, hb7, hb8],
             keypoints:["JWT-based authentication", "JPA Criteria filtering", "MapStruct DTOs", "Stripe payments", "Async emails", "Caching", "Auditing"],
@@ -71,6 +79,24 @@ function Project() {
             link:'https://hotel-booking-frontend-rho.vercel.app/',
             code:'https://github.com/bipinstha07/Hotel_Booking',
         },
+        {
+            title: "Stock Prediction AI Platform",
+            description: "An AI-powered stock prediction web app where users can log in and predict stock prices for any company based on provided news or statements. Built with Next.js for the frontend (featuring interactive charts) and Spring Boot backend integrated with Spring AI and Hibernate. Uses OpenRouter API for AI predictions, secured with Spring Security, and stores predicted stock prices for future reference.",
+            images: [sp1, sp2, sp3],
+            keypoints: [
+                "User login & authentication",
+                "Predict stock prices from news/statements",
+                "OpenRouter API AI model integration",
+                "Interactive chart visualizations",
+                "Spring AI backend processing",
+                "Secure access with Spring Security",
+                "Persistent storage of predictions"
+            ],
+            technology: "Spring_Boot Spring_AI Hibernate Spring_Security Aritificial_Intelligence Generative_AI OpenRouter_API Next.js TailwindCSS TypeScript Chart.js",
+            link: "https://github.com/bipinstha07/stock_prediction",
+            code: "https://github.com/bipinstha07/stock_prediction"
+        },
+        
         {
             title: "Train Management System (Backend)",
             description: "Backend API built using Java Spring Boot for managing train routes, stations, schedules, and bookings with secure authentication.",
@@ -92,10 +118,19 @@ function Project() {
         {
             title:"Personal Portfolio",
             description: "A professional personal portfolio showcasing skills, projects, and experience, built with modern web technologies for optimal performance.",
-            images:[portfolio],
+            images:[pf1, pf2, pf3, pf4, pf5],
+            keypoints: [
+                "Showcases skills, projects, and experience",
+                "Universe themed 3D with three.js when only click eye button at top right",
+                "Modern, responsive UI design",
+                "Built with React and TailwindCSS",
+                "Smooth animations with Framer Motion",
+                "AI-assisted content via Google Gemini",
+                "Fast performance and SEO optimized"
+            ],
             technology:"React Tailwind Framer Typescript AI Assistance GEMINI",
-            link:'',
-            code:''
+            link:'https://www.bipinshrestha01.com.np',
+            code:'https://github.com/bipinstha07/portfolio'
         },
         {
             title: "URL Shortener",
@@ -225,11 +260,7 @@ function Project() {
                                             {tech}
                                         </span>
                                     ))}
-                                    {data.technology.split(' ').length > 4 && (
-                                        <span className="px-2 py-1 text-xs bg-gray-800/50 text-gray-300 rounded border border-gray-700/50">
-                                            +{data.technology.split(' ').length - 4}
-                                        </span>
-                                    )}
+                                   
                                 </div>
 
                                 {/* Action Buttons */}
