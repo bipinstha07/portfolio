@@ -1,5 +1,4 @@
 import armstrong from  '../assets/armstrong.png'
-import portfolio from '../assets/portfolio.png'
 import blog from '../assets/blog.png'
 import train from '../assets/train.png'
 import hb1 from '../assets/HotelBooking/hb1.png'
