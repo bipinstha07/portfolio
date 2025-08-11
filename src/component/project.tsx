@@ -42,7 +42,7 @@ function ImageGallery({ images, title }: { images: string[], title: string }) {
     return (
         <div className="relative group">
             <img
-                className="w-[580px] h-52 lg:h-80 mx-auto object-cover transition-transform duration-500 group-hover:scale-100 rounded"
+                className="w-[580px] h-52 lg:h-80 mx-auto object-cover transition-all duration-500 group-hover:scale-100 group-hover:grayscale-0 grayscale rounded"
                 src={images[currentImageIndex]}
                 alt={title + ' image ' + (currentImageIndex + 1)}
             />
@@ -203,7 +203,7 @@ function Project() {
                                         <ImageGallery images={data.images} title={data.title} />
                                     ) : (
                                         <motion.img 
-                                            className=" h-58 lg:h-60 mx-auto object-contain transition-transform duration-500 group-hover:scale-100" 
+                                            className=" h-58 lg:h-60 mx-auto object-contain transition-all duration-500 group-hover:scale-100 group-hover:grayscale-0 grayscale" 
                                             src={data.images[0]} 
                                             alt={data.title}
                                         />
