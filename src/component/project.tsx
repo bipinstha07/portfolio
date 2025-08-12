@@ -42,7 +42,7 @@ function ImageGallery({ images, title }: { images: string[], title: string }) {
     return (
         <div className="relative group">
             <img
-                className="w-[580px] h-52 lg:h-80 mx-auto object-cover transition-all duration-500 group-hover:scale-100 group-hover:grayscale-0 grayscale rounded"
+                className="w-[580px] h-52 lg:h-80 mx-auto object-cover transition-all duration-500 group-hover:scale-100 lg:group-hover:grayscale-0 lg:grayscale rounded"
                 src={images[currentImageIndex]}
                 alt={title + ' image ' + (currentImageIndex + 1)}
             />
@@ -182,7 +182,7 @@ function Project() {
                             className="group relative bg-gradient-to-br from-gray-900/10 to-gray-800/10 backdrop-blur-[2px] border border-gray-700/50 rounded-xl overflow-hidden hover:border-gray-600/50 transition-all duration-500 hover:scale-[1.01]"
                             whileInView={{ x: 0, opacity: 1 }} 
                             initial={{ 
-                                x: -10, 
+                                x: 0, 
                                 opacity: 0 
                             }} 
                             transition={{ 
@@ -203,7 +203,7 @@ function Project() {
                                         <ImageGallery images={data.images} title={data.title} />
                                     ) : (
                                         <motion.img 
-                                            className=" h-58 lg:h-60 mx-auto object-contain transition-all duration-500 group-hover:scale-100 group-hover:grayscale-0 grayscale" 
+                                            className=" h-58 lg:h-60 mx-auto object-contain transition-all duration-500 group-hover:scale-100 lg:group-hover:grayscale-0 lg:grayscale" 
                                             src={data.images[0]} 
                                             alt={data.title}
                                         />
