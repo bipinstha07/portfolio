@@ -20,10 +20,12 @@ import pf2 from '../assets/Portfolio/pf2.png'
 import pf3 from '../assets/Portfolio/pf3.png'
 import pf4 from '../assets/Portfolio/pf4.png'
 import pf5 from '../assets/Portfolio/pf5.png'
+import qz1 from '../assets/Quizes/qz1.png'
+import qz2 from '../assets/Quizes/qz2.png'
 
 import { GithubOutlined, LinkOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 // Image Gallery Component
 function ImageGallery({ images, title }: { images: string[], title: string }) {
@@ -68,6 +70,10 @@ function ImageGallery({ images, title }: { images: string[], title: string }) {
 }
 
 function Project() {
+    const [currentPage, setCurrentPage] = useState(1);
+    const projectsPerPage = 5;
+    const paginationRef = useRef<HTMLDivElement>(null);
+    
     const project = [
         {
             title: "Hotel Booking Application",
@@ -78,6 +84,16 @@ function Project() {
             link:'https://hotel-booking-frontend-rho.vercel.app/',
             code:'https://github.com/bipinstha07/Hotel_Booking',
         },
+        {
+            title: "Quizes Mongo Microservices Application",
+            description: "A microservices-based quiz generation system built with Spring Boot and Spring AI, utilizing Docker for containerization and running MongoDB and PostgreSQL inside Docker. The system generates quizzes dynamically based on selected categories and leverages AI for question creation. Includes Config Server, API Gateway, Service Registry, and Category Service for modular architecture.",
+            images: [qz1, qz2],
+            keypoints: ["Spring AI-powered quiz generation", "Docker inside Docker setup", "MongoDB & PostgreSQL integration", "Category-based dynamic quiz creation", "Microservices architecture", "Config Server for centralized configuration", "API Gateway & Service Registry"],
+            technology: "Spring_Boot Spring_AI Docker MongoDB PostgreSQL Microservices Config_Server API_Gateway Eureka_Service_Registry Externalized_Configuration",
+            link: "https://github.com/bipinstha07/Quizzes-MicroService",
+            code: "https://github.com/bipinstha07/Quizzes-MicroService"
+        }
+,        
         {
             title: "Stock Prediction AI Platform",
             description: "An AI-powered stock prediction web app where users can log in and predict stock prices for any company based on provided news or statements. Built with Next.js for the frontend (featuring interactive charts) and Spring Boot backend integrated with Spring AI and Hibernate. Uses OpenRouter API for AI predictions, secured with Spring Security, and stores predicted stock prices for future reference.",
@@ -156,7 +172,126 @@ function Project() {
         }
     ]
 
-    
+    // Calculate pagination
+    const totalPages = Math.ceil(project.length / projectsPerPage);
+    const startIndex = (currentPage - 1) * projectsPerPage;
+    const endIndex = startIndex + projectsPerPage;
+    const currentProjects = project.slice(startIndex, endIndex);
+
+    const goToPage = (page: number) => {
+        setCurrentPage(page);
+    };
+
+    const goToNextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const goToPrevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    // Pagination Component
+    const Pagination = () => {
+        if (totalPages <= 1) return null;
+
+        const getPageNumbers = () => {
+            const pages = [];
+            const maxVisiblePages = 5;
+            
+            if (totalPages <= maxVisiblePages) {
+                for (let i = 1; i <= totalPages; i++) {
+                    pages.push(i);
+                }
+            } else {
+                if (currentPage <= 3) {
+                    for (let i = 1; i <= 4; i++) {
+                        pages.push(i);
+                    }
+                    pages.push('...');
+                    pages.push(totalPages);
+                } else if (currentPage >= totalPages - 2) {
+                    pages.push(1);
+                    pages.push('...');
+                    for (let i = totalPages - 3; i <= totalPages; i++) {
+                        pages.push(i);
+                    }
+                } else {
+                    pages.push(1);
+                    pages.push('...');
+                    for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+                        pages.push(i);
+                    }
+                    pages.push('...');
+                    pages.push(totalPages);
+                }
+            }
+            
+            return pages;
+        };
+
+        return (
+            <motion.div 
+                className="flex justify-center items-center gap-2 mt-8 mb-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
+                {/* Previous Button */}
+                <button
+                    onClick={goToPrevPage}
+                    disabled={currentPage === 1}
+                    className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                        currentPage === 1
+                            ? 'text-gray-500 cursor-not-allowed'
+                            : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+                    }`}
+                >
+                    <LeftOutlined className="text-xs" />
+                    Previous
+                </button>
+
+                {/* Page Numbers */}
+                <div className="flex items-center gap-1">
+                    {getPageNumbers().map((page, index) => (
+                        <div key={index}>
+                            {page === '...' ? (
+                                <span className="px-3 py-2 text-gray-500">...</span>
+                            ) : (
+                                <button
+                                    onClick={() => goToPage(page as number)}
+                                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                                        currentPage === page
+                                            ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white'
+                                            : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+                                    }`}
+                                >
+                                    {page}
+                                </button>
+                            )}
+                        </div>
+                    ))}
+                </div>
+
+                {/* Next Button */}
+                <button
+                    onClick={goToNextPage}
+                    disabled={currentPage === totalPages}
+                    className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                        currentPage === totalPages
+                            ? 'text-gray-500 cursor-not-allowed'
+                            : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+                    }`}
+                >
+                    Next
+                    <RightOutlined className="text-xs" />
+                </button>
+            </motion.div>
+        );
+    };
 
     return (
         <>
@@ -173,12 +308,25 @@ function Project() {
                     <p className="text-gray-400 text-base max-w-xl mx-auto">
                         Explore my latest work showcasing full-stack development, backend systems, and modern web applications
                     </p>
+                 
                 </motion.div>
 
+                {/* Pagination - Top of Projects */}
+                <div ref={paginationRef} className="mb-1">
+                    
+                    <Pagination />
+                </div>
+                {totalPages > 1 && (
+                        <p className="text-gray-500 mx-auto mb-5 rounded-lg p-2 text-sm  flex justify-center items-center text-center max-w-fit">
+                         
+                            Page {currentPage} of {totalPages} • Showing {currentProjects.length} of {project.length} projects
+                            
+                        </p>
+                    )}
                 <div className="space-y-6 mx-auto mb-16">
-                    {project.map((data, index) => (
+                    {currentProjects.map((data, index) => (
                         <motion.div 
-                            key={index} 
+                            key={`${data.title}-${currentPage}-${index}`}
                             className="group relative bg-gradient-to-br from-gray-900/10 to-gray-800/10 backdrop-blur-[2px] border border-gray-700/50 rounded-xl overflow-hidden hover:border-gray-600/50 transition-all duration-500 hover:scale-[1.01]"
                             whileInView={{ x: 0, opacity: 1 }} 
                             initial={{ 
