@@ -17,59 +17,105 @@ const container = (delay: number) => ({
 })
 
     const spaceTime = ` I am also a Space and Astronomy enthusiast, deeply fascinated by the mysteries of the universe — from black holes and time travel to the very fabric of reality. I am passionate about exploring how space and time shape everything we know and everything yet to be discovered. I also lead a vibrant community called "Space Time," bringing together over 140,000 members who share the same passion.`
-    const alldata = `
-    Bipin Shrestha is a passionate Full-Stack Developer and a Computer Science student at the University of Louisiana at Monroe, expected to graduate in 2026. He is proficient in Java, React, Spring Boot, SQL, AWS, and TailWindCSS, with expertise in full-stack development, CI/CD, and cloud computing.
-
-    Skills:
-    Java (90%), React (85%), Spring Boot (50%), SQL (82%), AWS (75%), TailWindCSS (90%)
-
-    Projects:
-
-    Restaurant POS System (in progress): A full-featured business POS platform using React, Node.js, Tailwind, Typescript, Vite, JWT, MongoDB, Express.
-    Link: null
-
-    Blogging Website: A blogging platform with authentication and MongoDB integration.
-    Link: https://blog-3npo.onrender.com/
-
-    Personal Portfolio: Built using React, Tailwind CSS, Framer Motion, and TypeScript.
-    Link: (currently viewing)
-
-    URL Shortener: A web app to shorten long URLs.
-    Link: https://url-shortener-b0ag.onrender.com/
-
-    Armstrong Number Checker: Tool to verify Armstrong numbers using JavaScript.
-    Link: https://bipinstha07.github.io/Armstrong/
-
-    WSCube Clone Website: Static clone demonstrating advanced frontend work.
-    Link: https://bipinstha07.github.io/wscube/#project
-
-    Research:
-    Spring 2023 – Teacher Candidate Perceptions of the Use of Virtual Reality as a Teaching Tool (Prof. Stacia Austin)
-    Fall 2023 – AI in Business Communication (Prof. Veronika Humphries)
-
-    Certifications:
-
-    AWS Certified Cloud Practitioner (2024)
-    https://www.credly.com/badges/f477c3a2-4557-40d9-abf3-5fa64e2dd87b/linked_in?t=sn4nwf
-
-    Problem Solving (Java) – HackerRank (March 2024)
-    https://www.hackerrank.com/certificates/4965911b13aa
-
-    Linux Command Line – Udemy (May 2025)
-    https://www.udemy.com/certificate/UC-a7f64826-e9a5-4255-83c6-9559ad2791fa
-
-    CS406: Information Security – Saylor Academy (May 2025)
-    https://learn.saylor.org/pluginfile.php/1/tool_certificate/issues/1746495391/0234703439BS.pdf
-
-    Postman API Fundamentals – Postman (Feb 2024)
-    https://badgr.com/public/assertions/6y4UDaLhRyedVimaQEH9Jg?identity__email=bipinshrestha830@gmail.com
-
-    Contact:
-    Email: bipinshrestha830@gmail.com
-    Location: Monroe, LA
-    LinkedIn: https://www.linkedin.com/in/bipin-shrestha-4baba01a0/
-    GitHub: https://github.com/bipinstha07
-    `
+    const alldata = `{
+        "personalInfo": {
+            "name": "Bipin Shrestha",
+            "title": "Full-Stack Developer & Computer Science Student",
+            "education": "University of Louisiana at Monroe, expected graduation 2026",
+            "skills": {
+                "Java": "90%",
+                "React": "85%",
+                "Spring_Boot": "50%",
+                "SQL": "82%",
+                "AWS": "75%",
+                "TailWindCSS": "90%"
+            },
+            "contact": {
+                "email": "bipinshrestha830@gmail.com",
+                "location": "Monroe, LA",
+                "linkedin": "https://www.linkedin.com/in/bipin-shrestha-4baba01a0/",
+                "github": "https://github.com/bipinstha07"
+            },
+            "research": [
+                "Spring 2023 – Teacher Candidate Perceptions of the Use of Virtual Reality as a Teaching Tool (Prof. Stacia Austin)",
+                "Fall 2023 – AI in Business Communication (Prof. Veronika Humphries)"
+            ],
+            "certifications": [
+                { "title": "AWS Certified Cloud Practitioner (2024)", "link": "https://www.credly.com/badges/f477c3a2-4557-40d9-abf3-5fa64e2dd87b/linked_in?t=sn4nwf" },
+                { "title": "Problem Solving (Java) – HackerRank (March 2024)", "link": "https://www.hackerrank.com/certificates/4965911b13aa" },
+                { "title": "Linux Command Line – Udemy (May 2025)", "link": "https://www.udemy.com/certificate/UC-a7f64826-e9a5-4255-83c6-9559ad2791fa" },
+                { "title": "CS406: Information Security – Saylor Academy (May 2025)", "link": "https://learn.saylor.org/pluginfile.php/1/tool_certificate/issues/1746495391/0234703439BS.pdf" },
+                { "title": "Postman API Fundamentals – Postman (Feb 2024)", "link": "https://badgr.com/public/assertions/6y4UDaLhRyedVimaQEH9Jg?identity__email=bipinshrestha830@gmail.com" }
+            ]
+        },
+        "projects": [
+            {
+                "title": "Hotel Booking Application",
+                "description": "A full-stack hotel booking system for privately-owned or large hotels, built with Spring Boot, Next.js, and AWS. Features include JWT-based auth, JPA Criteria filtering, MapStruct DTOs, Stripe payments, async emails, caching, and auditing. Deployed on AWS (EC2, RDS, S3, API Gateway, Elastic Beanstalk) with CI/CD via CodePipeline and CodeBuild.",
+                "images": ["hb1","hb2","hb3","hb4","hb5","hb6","hb7","hb8"],
+                "keypoints":["JWT-based authentication","JPA Criteria filtering","MapStruct DTOs","Stripe payments","Async emails","Caching","Auditing"],
+                "technology":"Spring_Boot Next.js TailwindCSS TypeScript JWT Hibernate JPA MapStruct Stripe AWS EC2 RDS S3 API Gateway Elastic Beanstalk CodePipeline",
+                "link":"https://hotel-booking-frontend-rho.vercel.app/",
+                "code":"https://github.com/bipinstha07/Hotel_Booking"
+            },
+            {
+                "title": "Quizes Mongo Microservices Application",
+                "description": "A microservices-based quiz generation system built with Spring Boot and Spring AI, utilizing Docker for containerization and running MongoDB and PostgreSQL inside Docker. The system generates quizzes dynamically based on selected categories and leverages AI for question creation. Includes Config Server, API Gateway, Service Registry, and Category Service for modular architecture.",
+                "images": ["qz1","qz2"],
+                "keypoints":["Spring AI-powered quiz generation","Docker inside Docker setup","MongoDB & PostgreSQL integration","Category-based dynamic quiz creation","Microservices architecture","Config Server for centralized configuration","API Gateway & Service Registry"],
+                "technology":"Spring_Boot Spring_AI Docker MongoDB PostgreSQL Microservices Config_Server API_Gateway Eureka_Service_Registry Externalized_Configuration",
+                "link":"https://github.com/bipinstha07/Quizzes-MicroService",
+                "code":"https://github.com/bipinstha07/Quizzes-MicroService"
+            },
+            {
+                "title": "Config Server",
+                "description": "Microservice to manage and externalize configuration for all services, fetching configs from GitHub.",
+                "images": [],
+                "keypoints":["Externalized configuration management","GitHub integration","Centralized configs for microservices"],
+                "technology":"Spring_Boot Config_Server GitHub Microservices",
+                "link":"https://github.com/bipinstha07/config-server",
+                "code":"https://github.com/bipinstha07/config-server"
+            },
+            {
+                "title": "API Gateway",
+                "description": "Handles routing, authentication, and load balancing for all microservices in the quiz application.",
+                "images": [],
+                "keypoints":["Request routing","Authentication & Authorization","Load balancing"],
+                "technology":"Spring_Boot API_Gateway Microservices",
+                "link":"https://github.com/bipinstha07/api-gateway",
+                "code":"https://github.com/bipinstha07/api-gateway"
+            },
+            {
+                "title": "Category Service",
+                "description": "Manages quiz categories and feeds AI for quiz generation based on category selection.",
+                "images": [],
+                "keypoints":["Category management","Supports AI quiz generation","Microservice architecture"],
+                "technology":"Spring_Boot Microservices",
+                "link":"https://github.com/bipinstha07/category-service",
+                "code":"https://github.com/bipinstha07/category-service"
+            },
+            {
+                "title": "Registry",
+                "description": "Service registry for microservices discovery and communication within the quiz application.",
+                "images": [],
+                "keypoints":["Service discovery","Microservices communication","Eureka-based registry"],
+                "technology":"Spring_Boot Eureka_Service_Registry Microservices",
+                "link":"https://github.com/bipinstha07/registry",
+                "code":"https://github.com/bipinstha07/registry"
+            },
+            {
+                "title": "Stock Prediction AI Platform",
+                "description": "An AI-powered stock prediction web app where users can log in and predict stock prices for any company based on provided news or statements. Built with Next.js for the frontend (featuring interactive charts) and Spring Boot backend integrated with Spring AI and Hibernate. Uses OpenRouter API for AI predictions, secured with Spring Security, and stores predicted stock prices for future reference.",
+                "images":["sp1","sp2","sp3"],
+                "keypoints":["User login & authentication","Predict stock prices from news/statements","OpenRouter API AI model integration","Interactive chart visualizations","Spring AI backend processing","Secure access with Spring Security","Persistent storage of predictions"],
+                "technology":"Spring_Boot Spring_AI Hibernate Spring_Security Aritificial_Intelligence Generative_AI OpenRouter_API Next.js TailwindCSS TypeScript Chart.js",
+                "link":"https://github.com/bipinstha07/stock_prediction",
+                "code":"https://github.com/bipinstha07/stock_prediction"
+            }
+            // ...other projects can be appended here similarly
+        ]
+    }`;
+    
 
 function ContentFirst() {
     const [text, setText] = useState("")
