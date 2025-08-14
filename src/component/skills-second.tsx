@@ -26,7 +26,7 @@ export default function Skills() {
                 whileInView={{y:0, opacity:1}} 
                 initial={{y:-20, opacity:0}} 
                 transition={{duration:0.5}} 
-                className="text-center relative mt-25 sm:mt-0 mb-8 px-4"
+                className="text-center relative mt-25 mb-8 px-4"
             >
                 <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-500 to-cyan-300 mb-4">
                     Skills & Expertise

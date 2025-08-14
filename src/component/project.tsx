@@ -77,10 +77,21 @@ function Project() {
     const project = [
         {
             title: "Hotel Booking Application",
-            description: "A full-stack hotel booking system for privately-owned or large hotels, built with Spring Boot, Next.js, and AWS. Features include JWT-based auth, JPA Criteria filtering, MapStruct DTOs, Stripe payments, async emails, caching, and auditing. Deployed on AWS (EC2, RDS, S3, API Gateway, Elastic Beanstalk) with CI/CD via CodePipeline and CodeBuild.",
+            description: "A full-stack hotel booking system for privately-owned or large hotels, built with Spring Boot, Next.js, and AWS. Customers can log in or book without an account, receive confirmation emails after booking, and wait for admin approval. Admin approves bookings, triggering another email notification.Frontend hosted on Vercel, backend deployed on AWS.",
             images: [hb1, hb2, hb3, hb4, hb5, hb6, hb7, hb8],
-            keypoints:["JWT-based authentication", "JPA Criteria filtering", "MapStruct DTOs", "Stripe payments", "Async emails", "Caching", "Auditing"],
-            technology: "Spring_Boot Next.js TailwindCSS TypeScript JWT Hibernate JPA MapStruct Stripe AWS EC2 RDS S3 API Gateway Elastic Beanstalk CodePipeline",
+            keypoints: [
+                "Secure JWT-based Authentication & Role-based Authorization",
+                "Spring Boot backend for RESTful API development",
+                "Hibernate ORM with MySQL database for data persistence",
+                "Robust exception handling and validation",
+                "Asynchronous email notifications and Stripe payment integration",
+                "Admin & customer roles with real-time booking management",
+                "Building and packaging with Maven",
+                "Scalable AWS infrastructure (EC2, RDS, S3, API Gateway, Elastic Beanstalk)",
+                "Automated CI/CD with AWS CodePipeline & CodeBuild"
+              ]
+,              
+            technology: "Spring_Boot Next.js TailwindCSS TypeScript JWT Hibernate MySQL JPA MapStruct Stripe AWS EC2 RDS S3 API Gateway Elastic Beanstalk CodePipeline",
             link:'https://hotel-booking-frontend-rho.vercel.app/',
             code:'https://github.com/bipinstha07/Hotel_Booking',
         },
@@ -327,7 +338,7 @@ function Project() {
                     {currentProjects.map((data, index) => (
                         <motion.div 
                             key={`${data.title}-${currentPage}-${index}`}
-                            className="group relative bg-gradient-to-br from-gray-900/10 to-gray-800/10 backdrop-blur-[2px] border border-gray-700/50 rounded-xl overflow-hidden hover:border-gray-600/50 transition-all duration-500 hover:scale-[1.01]"
+                            className="group relative bg-gradient-to-br from-gray-900/10 to-gray-800/10 backdrop-blur-[2px] border border-gray-700/50 rounded-xl overflow-hidden hover:border-gray-600/50 transition-all duration-100 hover:scale-[1.01]"
                             whileInView={{ x: 0, opacity: 1 }} 
                             initial={{ 
                                 x: 0, 

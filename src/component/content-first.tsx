@@ -356,7 +356,7 @@ function ContentFirst() {
 
     return (
         <>
-            <div className="flex   md:pt-25 flex-wrap md:h-screen pt-0  relative">
+            <div className="flex 2xl:h-[75vh]  md:pt-25 flex-wrap  pt-0  relative">
                 {/* Removing the gradient border lines */}
                 <div className="md:w-3/5 order-2 md:order-1 ">
                     <motion.p
@@ -418,7 +418,7 @@ function ContentFirst() {
                         variants={container(0.5)}
                         initial='hidden'
                         animate='visible'
-                        className="text-end mt-4 mb md:mt-20"
+                        className="text-end mt-4  md:mt-20"
                     >
 
                         <a href="/resume" className="mr-2 group">
