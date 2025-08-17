@@ -49,7 +49,7 @@ function ImageGallery({ images, title }: { images: string[], title: string }) {
                     src={images[currentImageIndex]}
                     alt={title + ' image ' + (currentImageIndex + 1)}
                 />
-                <div className="absolute inset-0 bg-purple-600/30 lg:group-hover:bg-transparent transition-all duration-300 rounded hidden lg:block"></div>
+                <div className="absolute inset-0 bg-gray-600/60 lg:group-hover:bg-transparent transition-all duration-300 rounded hidden lg:block"></div>
             </div>
             {/* Navigation Buttons */}
             <button
