@@ -49,7 +49,7 @@ function ImageGallery({ images, title }: { images: string[], title: string }) {
                     src={images[currentImageIndex]}
                     alt={title + ' image ' + (currentImageIndex + 1)}
                 />
-                <div className="absolute inset-0 bg-blue-900/60 group-hover:bg-transparent transition-all duration-300 rounded"></div>
+                <div className="absolute inset-0 bg-blue-900/60 lg:group-hover:bg-transparent transition-all duration-300 rounded hidden lg:block"></div>
             </div>
             {/* Navigation Buttons */}
             <button
@@ -248,12 +248,7 @@ function Project() {
         };
 
         return (
-            <motion.div 
-                className="flex justify-center items-center gap-2 mt-8 mb-2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-            >
+            <div className="flex justify-center items-center gap-2 mt-8 mb-2">
                 {/* Previous Button */}
                 <button
                     onClick={goToPrevPage}
@@ -303,7 +298,7 @@ function Project() {
                     Next
                     <RightOutlined className="text-xs" />
                 </button>
-            </motion.div>
+            </div>
         );
     };
 
@@ -370,7 +365,7 @@ function Project() {
                                                 src={data.images[0]} 
                                                 alt={data.title}
                                             />
-                                            <div className="absolute inset-0 bg-blue-900/60 group-hover:bg-transparent transition-all duration-300"></div>
+                                            <div className="absolute inset-0 bg-blue-900/60 lg:group-hover:bg-transparent transition-all duration-300 hidden lg:block"></div>
                                         </div>
                                     )}
                                 </motion.div>
