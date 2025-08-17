@@ -49,7 +49,7 @@ function ImageGallery({ images, title }: { images: string[], title: string }) {
                     src={images[currentImageIndex]}
                     alt={title + ' image ' + (currentImageIndex + 1)}
                 />
-                <div className="absolute inset-0 bg-blue-900/60 lg:group-hover:bg-transparent transition-all duration-300 rounded hidden lg:block"></div>
+                <div className="absolute inset-0 bg-purple-600/30 lg:group-hover:bg-transparent transition-all duration-300 rounded hidden lg:block"></div>
             </div>
             {/* Navigation Buttons */}
             <button
@@ -365,7 +365,7 @@ function Project() {
                                                 src={data.images[0]} 
                                                 alt={data.title}
                                             />
-                                            <div className="absolute inset-0 bg-blue-900/60 lg:group-hover:bg-transparent transition-all duration-300 hidden lg:block"></div>
+                                            <div className="absolute inset-0 bg-green-600/60 lg:group-hover:bg-transparent transition-all duration-300 hidden lg:block"></div>
                                         </div>
                                     )}
                                 </motion.div>
