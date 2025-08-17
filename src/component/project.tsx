@@ -43,11 +43,14 @@ function ImageGallery({ images, title }: { images: string[], title: string }) {
 
     return (
         <div className="relative group">
-            <img
-                className="w-[580px] h-52 lg:h-80 mx-auto object-cover transition-all duration-500 group-hover:scale-100 lg:group-hover:grayscale-0 lg:grayscale rounded"
-                src={images[currentImageIndex]}
-                alt={title + ' image ' + (currentImageIndex + 1)}
-            />
+            <div className="relative inline-block">
+                <img
+                    className="w-[580px] h-52 lg:h-80 mx-auto object-cover transition-all duration-500 group-hover:scale-100 rounded"
+                    src={images[currentImageIndex]}
+                    alt={title + ' image ' + (currentImageIndex + 1)}
+                />
+                <div className="absolute inset-0 bg-blue-900/60 group-hover:bg-transparent transition-all duration-300 rounded"></div>
+            </div>
             {/* Navigation Buttons */}
             <button
                 onClick={prevImage}
@@ -361,18 +364,15 @@ function Project() {
                                     {data.images.length > 1 ? (
                                         <ImageGallery images={data.images} title={data.title} />
                                     ) : (
-                                        <motion.img 
-                                            className=" h-58 lg:h-60 mx-auto object-contain transition-all duration-500 group-hover:scale-100 lg:group-hover:grayscale-0 lg:grayscale" 
-                                            src={data.images[0]} 
-                                            alt={data.title}
-                                        />
-                                        
-            
-
-                                    )
-                                    
-                                    } 
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                                        <div className="relative inline-block">
+                                            <motion.img 
+                                                className=" h-58 lg:h-60 mx-auto object-contain transition-all duration-500 group-hover:scale-100" 
+                                                src={data.images[0]} 
+                                                alt={data.title}
+                                            />
+                                            <div className="absolute inset-0 bg-blue-900/60 group-hover:bg-transparent transition-all duration-300"></div>
+                                        </div>
+                                    )}
                                 </motion.div>
 
                                 {/* Content - Right Side */}
