@@ -15,6 +15,7 @@ import url3 from '../assets/Url Shortener/url3.png'
 import sp1 from '../assets/Stock Prediction/sp1.png'
 import sp2 from '../assets/Stock Prediction/sp2.png'
 import sp3 from '../assets/Stock Prediction/sp3.png'
+import sp4 from '../assets/Stock Prediction/sp4.png'
 import pf1 from '../assets/Portfolio/pf1.png'
 import pf2 from '../assets/Portfolio/pf2.png'
 import pf3 from '../assets/Portfolio/pf3.png'
@@ -99,7 +100,7 @@ function Project() {
             code:'https://github.com/bipinstha07/Hotel_Booking',
         },
         {
-            title: "Quizes Mongo Microservices Application",
+            title: "Quizes Microservices Application",
             description: "A microservices-based quiz generation system built with Spring Boot and Spring AI, utilizing Docker for containerization and running MongoDB and PostgreSQL inside Docker. The system generates quizzes dynamically based on selected categories and leverages AI for question creation. Includes Config Server, API Gateway, Service Registry, and Category Service for modular architecture.",
             images: [qz1, qz2],
             keypoints: ["Spring AI-powered quiz generation", "Docker inside Docker setup", "MongoDB & PostgreSQL integration", "Category-based dynamic quiz creation", "Microservices architecture", "Config Server for centralized configuration", "API Gateway & Service Registry"],
@@ -111,13 +112,14 @@ function Project() {
         {
             title: "Stock Prediction AI Platform",
             description: "An AI-powered stock prediction web app where users can log in and predict stock prices for any company based on provided news or statements. Built with Next.js for the frontend (featuring interactive charts) and Spring Boot backend integrated with Spring AI and Hibernate. Uses OpenRouter API for AI predictions, secured with Spring Security, and stores predicted stock prices for future reference.",
-            images: [sp1, sp2, sp3],
+            images: [sp1, sp2, sp3, sp4],
             keypoints: [
                 "User login & authentication",
                 "Predict stock prices from news/statements",
                 "OpenRouter API AI model integration",
                 "Interactive chart visualizations",
                 "Spring AI backend processing",
+                "Premium User Authentication",
                 "Secure access with Spring Security",
                 "Persistent storage of predictions"
             ],
