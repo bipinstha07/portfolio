@@ -64,7 +64,6 @@ export default function Resume() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-[9px] sm:text-xs text-gray-700">Bachelor of Science in Computer Science</span>
-              <span className="text-[9px] sm:text-xs text-gray-600">Aug 2022 – May 2026</span>
             </div>
             <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
               Data Structures and Algorithms, Object-Oriented Programming, Operating System, Computer Networks, Database Management
