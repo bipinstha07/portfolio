@@ -211,7 +211,7 @@ export default function Resume() {
             <div className="border-b border-black mb-2"></div>
             <div className="space-y-1">
               <p className="text-[9px] sm:text-xs text-gray-700">
-                <span className="font-semibold">Frontend:</span> <span className="italic">React.js, Next.js, TypeScript, JavaScript (ES6+), 
+                <span className="font-semibold">Frontend:</span> <span className="italic">React.js, Next.js, TypeScript, JavaScript, 
                 HTML5/CSS3, Tailwind CSS, Chart.js, Responsive UI</span>
               </p>
               <p className="text-[9px] sm:text-xs text-gray-700">
