@@ -2,23 +2,23 @@ import { Download, Home } from 'lucide-react'
 
 export default function Resume() {
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen" style={{ backgroundColor: '#E6E6E6' }}>
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
-        <div className="max-w-4xl mx-auto px-4 py-1">
+      <nav className="fixed top-0 w-full bg-white border-b border-gray-200 z-50 shadow-sm">
+        <div className="max-w-4xl mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             
             <div className="flex items-center gap-2">
               <a 
                 href="/" 
-                className="flex items-center gap-1 px-2 py-0.5 border border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent rounded text-xs"
+                className="flex items-center gap-1 px-3 py-1.5 border border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent rounded text-sm font-medium"
               >
-                <Home className="w-3 h-3" />
+                <Home className="w-4 h-4" />
                 Home
               </a>
               <a href="Resume only.pdf" download>
-              <button className="flex items-center gap-1 px-2 cursor-pointer py-0.5 border border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent rounded text-xs">
-                <Download className="w-3 h-3" />
+              <button className="flex items-center gap-1 px-3 py-1.5 cursor-pointer border border-gray-300 text-gray-700 hover:bg-gray-50 bg-transparent rounded text-sm font-medium">
+                <Download className="w-4 h-4" />
                 Download Resume
               </button>
               </a>
@@ -28,125 +28,210 @@ export default function Resume() {
       </nav>
 
       {/* Resume Content */}
-      <div className="max-w-4xl mx-auto px-8 pt-20 pb-8">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-black mb-2">Bipin Shrestha</h1>
-          <div className="text-gray-600 text-sm">
-            Monroe, LA | bipinshrestha830@gmail.com | 318-690-8483 | 
-            <a href="#" className="text-blue-600 underline ml-1">LinkedIn</a> | 
-            <a href="#" className="text-blue-600 underline ml-1">GitHub</a>
-          </div>
-        </div>
-
-        {/* Summary */}
-        <div className="mb-6">
-          <h2 className="text-lg font-bold text-black mb-2">SUMMARY</h2>
-          <p className="text-sm text-gray-700 leading-relaxed">
-            Motivated Computer Science student with a passion for problem solving and software development. 
-            Proficient in Java programming languages with a solid foundation in algorithms and data structures. 
-            Experienced in web development technologies and eager to learn and grow in a technology corporation.
-          </p>
-        </div>
-
-        {/* Education */}
-        <div className="mb-6">
-          <h2 className="text-lg font-bold text-black mb-2">EDUCATION</h2>
-          <div className="flex justify-between items-start mb-1">
-            <div>
-              <p className="text-sm font-medium text-black">University of Louisiana at Monroe, Monroe, LA</p>
-              <p className="text-sm text-gray-700">Bachelor of Science in Computer Science</p>
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 pt-15 pb-8">
+        {/* Resume Paper */}
+        <div className="bg-white shadow-lg border border-gray-200 rounded-lg p-4 sm:p-8">
+          {/* Header */}
+          <div className="text-center mb-2">
+            <h1 className="text-3xl sm:text-4xl font-bold text-black mb-1">Bipin Shrestha</h1>
+            <div className="text-gray-600 text-[10px] sm:text-xs">
+              Monroe, LA | bipinshrestha830@gmail.com | +1 318-690-8483 | 
+              <a href="https://www.linkedin.com/in/bipin-shrestha-4baba01a0/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline ml-1">LinkedIn</a> | 
+              <a href="https://github.com/bipinstha07" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline ml-1">GitHub</a> | 
+              <a href="https://www.bipinshrestha01.com.np" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline ml-1">Portfolio</a>
             </div>
-            <span className="text-sm text-gray-600">May 2026</span>
-          </div>
-          <div className="flex justify-between items-center">
-            <p className="text-sm text-gray-700">Relevant Coursework: Java, Data Structure, Algorithm, HTML, CSS, JavaScript, Database</p>
-            <span className="text-sm text-gray-600">GPA: 3.6 / 4.0</span>
-          </div>
-        </div>
-
-        {/* Course Projects / Research */}
-        <div className="mb-6">
-          <h2 className="text-lg font-bold text-black mb-2">COURSE PROJECT / RESEARCH</h2>
-          
-          <div className="mb-3">
-            <h3 className="text-sm font-bold text-black mb-1">Personal Portfolio</h3>
-            <p className="text-sm text-gray-700 mb-1">
-              A professional personal portfolio showcasing skills, projects, and experience, built with modern web
-              technologies for optimal performance.
-            </p>
-            <a href="https://www.bipinshrestha01.com.np" className="text-blue-600 underline text-sm">
-              https://www.bipinshrestha01.com.np
-            </a>
           </div>
 
+          {/* Summary */}
           <div className="mb-3">
-            <h3 className="text-sm font-bold text-black mb-1">URL Link Shortener</h3>
-            <ul className="text-sm text-gray-700 list-disc list-inside space-y-1">
-              <li>Developed URL link shortener system using Node.js, Express and MongoDB</li>
-              <li>For User Interface EJS was implemented</li>
-            </ul>
-          </div>
-
-          <div className="mb-3">
-            <h3 className="text-sm font-bold text-black mb-1">Armstrong Number Checker</h3>
-            <p className="text-sm text-gray-700">
-              Created a website that checks whether the number is an Armstrong number or not. HTML CSS JavaScript
+            <h2 className="text-[16px] font-bold text-black">SUMMARY</h2>
+            <div className="border-b border-black mb-2"></div>
+            <p className="text-[9px] sm:text-xs text-gray-700 leading-tight">
+              Motivated Computer Science student passionate about software development and problem-solving. 
+              Proficient in Java with strong algorithms and data structures skills, experienced in full-stack 
+              web development and cloud/DevOps projects, eager to contribute innovative solutions and grow in 
+              a dynamic tech environment.
             </p>
           </div>
 
-          <div>
-            <h3 className="text-sm font-bold text-black mb-1">Emerging Scholar Program (Collaborative Research with Professor)</h3>
+          {/* Education */}
+          <div className="mb-2">
+            <h2 className="text-[16px] font-bold text-black">EDUCATION</h2>
+            <div className="border-b border-black mb-2"></div>
+            <div className="flex justify-between items-start">
+              <span className="text-[9px] sm:text-xs font-semibold text-black">University of Louisiana at Monroe</span>
+              <span className="text-[9px] sm:text-xs text-gray-600">Monroe, LA</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-[9px] sm:text-xs text-gray-700">Bachelor of Science in Computer Science</span>
+              <span className="text-[9px] sm:text-xs text-gray-600">Aug 2022 – May 2026</span>
+            </div>
+            <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
+              Data Structures and Algorithms, Object-Oriented Programming, Operating System, Computer Networks, Database Management
+            </p>
+          </div>
+
+          {/* Projects */}
+          <div className="mb-3">
+            <h2 className="text-[16px] font-bold text-black ">PROJECTS</h2>
+            <div className="border-b border-black mb-2"></div>
+            
+            <div className="mb-4">
+              <div className="flex justify-between items-start mb-1">
+                <h3 className="text-[14px] font-bold text-black">Hotel Booking Application</h3>
+                <div className="text-[9px] sm:text-xs text-blue-600">
+                  <a href="https://hotel-booking-frontend-rho.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-800">Website</a>
+                  <span className="mx-2">|</span>
+                  <a href="https://github.com/bipinstha07/Hotel_Booking" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-800">Repository</a>
+                </div>
+              </div>
+              <p className="text-[9px] sm:text-xs text-gray-700 mb-2 leading-tight ml-4">
+                A full-stack hotel booking system for privately-owned or large hotels, built with Spring Boot, 
+                Next.js, and AWS.
+              </p>
+              <ul className="text-[9px] sm:text-xs text-gray-700 space-y-0.5  ml-4">
+                <li className="flex">
+                  <span className="mr-2">-</span>
+                  <span>Implemented secure JWT-based authentication with role-based access for users, supporting sign-up, 
+                  login, bookings, payments, and profile management.</span>
+                </li>
+                <li className="flex">
+                  <span className="mr-2">-</span>
+                  <span>Developed admin dashboard for room management (CRUD) and booking approvals, integrated with 
+                  asynchronous email notifications and Stripe payments.</span>
+                </li>
+                <li className="flex">
+                  <span className="mr-2">-</span>
+                  <span>Built backend with Spring Boot, Hibernate ORM, and MySQL, deployed on scalable AWS infrastructure 
+                  (EC2, RDS, S3, API Gateway, Elastic Beanstalk) with automated CI/CD via CodePipeline & CodeBuild.</span>
+                </li>
+              </ul>
+              <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
+                <span className="font-semibold">Tech Stack:</span> <span className="italic">Java, Spring Boot, Spring, Next.js, AWS, MySQL, 
+                Tailwind CSS, JavaScript</span>
+              </p>
+            </div>
+
+            <div className="mb-4">
+              <div className="flex justify-between items-start mb-1">
+                <h3 className="text-[14px] font-bold text-black">Quizzes Microservice Application</h3>
+                <div className="text-[9px] sm:text-xs text-blue-600">
+                  <a href="https://github.com/bipinstha07/Quizzes-MicroService" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-800">Repository</a>
+                </div>
+              </div>
+              <p className="text-[9px] sm:text-xs text-gray-700 mb-2 leading-tight ml-4">
+                A microservices-based quiz app using Spring Boot and Spring AI with local AI model that generates 
+                Category-based quizzes via Category and Quiz Services, managed through API Gateway and Config server 
+                with externalized configuration.
+              </p>
+              <ul className="text-[9px] sm:text-xs text-gray-700 space-y-0.5  ml-4">
+                <li className="flex">
+                  <span className="mr-2">-</span>
+                  <span>Leveraged Spring AI with a locally hosted model to dynamically generate quizzes, using MongoDB 
+                  for flexible quiz storage and PostgreSQL for relational data in a hybrid database architecture.</span>
+                </li>
+                <li className="flex">
+                  <span className="mr-2">-</span>
+                  <span>Deployed PostgreSQL, MongoDB, and RabbitMQ in Docker containers for portability, consistency, 
+                  and smooth inter-service communication.</span>
+                </li>
+                <li className="flex">
+                  <span className="mr-2">-</span>
+                  <span>Managed secure routing and service discovery with API Gateway and Eureka Service Registry for 
+                  seamless microservice interactions.</span>
+                </li>
+              </ul>
+              <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
+                <span className="font-semibold">Tech Stack:</span> <span className="italic">Java, Spring Boot, Spring AI, MongoDB, PostgreSQL, 
+                RabbitMQ, Docker, GitHub</span>
+              </p>
+            </div>
+
+            <div className="mb-4">
+              <div className="flex justify-between items-start mb-1">
+                <h3 className="text-[14px] font-bold text-black">Train Management System (Backend)</h3>
+                <div className="text-[9px] sm:text-xs text-blue-600">
+                  <a href="https://github.com/bipinstha07/TrainSystem" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-800">Repository</a>
+                </div>
+              </div>
+              <p className="text-[9px] sm:text-xs text-gray-700 mb-2 leading-tight ml-4">
+                A Full Backend Enterprise level Train Management System built with java spring boot to manage 
+                trains station, routes, schedules, seats, booking and payments with secure JWT-based authentication.
+              </p>
+              <ul className="text-[9px] sm:text-xs text-gray-700 space-y-0.5  ml-4">
+                <li className="flex">
+                  <span className="mr-2">-</span>
+                  <span>Built Spring Boot REST API with Hibernate + MySQL for trains, stations, routes, schedules, 
+                  seats, and bookings, with scalable pagination, sorting, and global error handling.</span>
+                </li>
+                <li className="flex">
+                  <span className="mr-2">-</span>
+                  <span>Applied AOP with custom annotations for logging and payment validation, configured centralized 
+                  Logger, and published OpenAPI/Swagger UI for interactive API documentation.</span>
+                </li>
+              </ul>
+              <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
+                <span className="font-semibold">Tech Stack:</span> <span className="italic">Java, Spring Boot, MySQL, Hibernate</span>
+              </p>
+            </div>
+
+            <div className="mb-4">
+              <div className="flex justify-between items-start mb-1">
+                <h3 className="text-[14px] font-bold text-black">Stock Prediction AI Platform</h3>
+                <div className="text-[9px] sm:text-xs text-blue-600">
+                  <a href="https://github.com/bipinstha07/stock_prediction" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-800">Repository</a>
+                </div>
+              </div>
+              <p className="text-[9px] sm:text-xs text-gray-700 mb-2 leading-tight ml-4">
+                AI-powered stock prediction web app with Next.js frontend and Spring Boot + Spring AI backend. 
+                Predicts stock prices for a given time (in months) from news/statements using Open Router API, 
+                secured with Spring Security.
+              </p>
+              <ul className="text-[9px] sm:text-xs text-gray-700 space-y-0.5  ml-4">
+                <li className="flex">
+                  <span className="mr-2">-</span>
+                  <span>Developed AI-powered stock prediction web app with Next.js frontend (interactive charts) and 
+                  Spring Boot + Spring AI backend, leveraging generative AI for predictive insights.</span>
+                </li>
+                <li className="flex">
+                  <span className="mr-2">-</span>
+                  <span>Integrated OpenRouter API for stock predictions, implemented secure user login and premium 
+                  authentication via Spring Security, and built interactive charts with Chart.js, TypeScript, and TailwindCSS.</span>
+                </li>
+              </ul>
+              <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
+                <span className="font-semibold">Tech Stack:</span> <span className="italic">Java, Spring Boot, MySQL, Hibernate, Spring MVC, 
+                Next.js, TailwindCSS, TypeScript, Generative AI, OpenRouter</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Technical Skills */}
+          <div className="mb-3">
+            <h2 className="text-[16px] font-bold text-black ">TECHNICAL SKILLS</h2>
+            <div className="border-b border-black mb-2"></div>
             <div className="space-y-1">
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-700">• AI in Business Communication</span>
-                <span className="text-sm text-gray-600">Fall 2023</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-700">• Teacher Candidate Perceptions of the Use of Virtual Reality as a Teaching Tool</span>
-                <span className="text-sm text-gray-600">Spring 2023</span>
-              </div>
+              <p className="text-[9px] sm:text-xs text-gray-700">
+                <span className="font-semibold">Frontend:</span> <span className="italic">React.js, Next.js, TypeScript, JavaScript (ES6+), 
+                HTML5/CSS3, Tailwind CSS, Chart.js, Responsive UI</span>
+              </p>
+              <p className="text-[9px] sm:text-xs text-gray-700">
+                <span className="font-semibold">Backend & APIs:</span> <span className="italic">Java, Spring Boot, Spring AI, Spring Cloud, Spring Security, Spring Security, REST APIs, Git, 
+                JWT Authentication & Role-Based Access, AOP, Microservices</span>
+              </p>
+              <p className="text-[9px] sm:text-xs text-gray-700">
+                <span className="font-semibold">Databases & Data:</span> <span className="italic">MySQL, PostgreSQL, MongoDB, Hibernate/JPA ORM, 
+                Data Modeling, Caching</span>
+              </p>
+              <p className="text-[9px] sm:text-xs text-gray-700">
+                <span className="font-semibold">AI & Automation:</span> <span className="italic">OpenRouter API, Generative AI, Spring AI, n8n, MCP</span>
+              </p>
+              <p className="text-[9px] sm:text-xs text-gray-700">
+                <span className="font-semibold">DevOps & Cloud:</span> <span className="italic">Docker, RabbitMQ, AWS (EC2, RDS, S3, API Gateway, 
+                Elastic Beanstalk, SNS, SQS, DynamoDB), CI/CD (CodePipeline & CodeBuild), Linux, GitHub</span>
+              </p>
             </div>
           </div>
-        </div>
-
-        {/* Skills */}
-        <div className="mb-6">
-          <h2 className="text-lg font-bold text-black mb-2">SKILLS</h2>
-          <ul className="text-sm text-gray-700 list-disc list-inside space-y-1">
-            <li>HTML, CSS, and JavaScript, Tailwind, Bootstrap, Java, Spring Boot, REST API, Next.js, React, Angular, Node.js</li>
-            <li>Java, Data Structure, Algorithm, API integration, SQL, NoSQL, MongoDB</li>
-            <li>AWS Cloud Practitioner</li>
-          </ul>
-        </div>
-
-        {/* Awards/Honors */}
-        <div className="mb-6">
-          <h2 className="text-lg font-bold text-black mb-2">AWARDS/HONORS</h2>
-          <div className="space-y-1">
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-700">• President's List</span>
-              <span className="text-sm text-gray-600">Spring 2023</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-700">• Dean's List</span>
-              <span className="text-sm text-gray-600">Fall 2023</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-700">• Lalita & Janak Karn Foundation Student Scholarship</span>
-              <span className="text-sm text-gray-600">Spring 2024</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Organization */}
-        <div>
-          <h2 className="text-lg font-bold text-black mb-2">ORGANIZATION</h2>
-          <p className="text-sm text-gray-700 leading-relaxed">
-            Member of Google Developer Student Club (GDSC) and Association for Computing Machinery (ACM). 
-            Collaborate with peers on software development projects, participate in coding challenges, and stay 
-            updated on the latest technologies.
-          </p>
         </div>
       </div>
     </div>
