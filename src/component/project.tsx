@@ -132,8 +132,15 @@ function Project() {
             title: "Train Management System (Backend)",
             description: "Backend API built using Java Spring Boot for managing train routes, stations, schedules, and bookings with secure authentication.",
             images: [train],
-            keypoints:["S", "Hibernate", "Spring Security", "JWT", "MySQL", "REST API"],
-            technology: "Java Spring Boot Hibernate Spring Security JWT MySQL REST API",
+            keypoints:["Build & package with Maven; structured logging (SLF4J + Logback)",
+                "RESTful APIs for trains, stations, routes, schedules, seats, bookings, payments",
+                "Spring Security for authentication & authorization",
+                "AOP with custom annotations for logging and payment workflow",
+                "Hibernate/JPA with MySQL, pagination & sorting",
+                "Admin CRUD; user search, book, view/cancel bookings, handle payments",
+                "OpenAPI/Swagger UI; consistent DTO mapping & PageResponse<T>"
+            ],
+            technology: "Java Spring_Boot Hibernate Spring_Security JWT MySQL REST API",
             link: "https://github.com/bipinstha07/TrainSystem",
             code:'https://github.com/bipinstha07/TrainSystem'
           },

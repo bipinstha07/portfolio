@@ -1,7 +1,7 @@
 import { FaNodeJs, FaReact } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
 import { FaUbuntu } from "react-icons/fa6";
-import { SiHibernate, SiJavascript, SiKubernetes, SiMongodb, SiMysql, SiSpringboot, SiDocker, SiLinux, SiAmazonec2, SiAwslambda, SiApachekafka, SiTypescript, SiGit } from "react-icons/si";
+import { SiHibernate, SiJavascript, SiKubernetes, SiMongodb, SiMysql, SiSpringboot, SiDocker, SiLinux, SiAmazonec2, SiAwslambda, SiApachekafka, SiTypescript, SiGit, SiJira } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { RiTailwindCssFill, RiNextjsFill } from 'react-icons/ri';
 import { motion } from 'framer-motion';
@@ -174,6 +174,13 @@ export default function Skills() {
                             <SiGit className="text-3xl sm:text-5xl text-orange-600" />
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs sm:text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                                 85%
+                            </div>
+                        </motion.div>
+
+                        <motion.div variants={techVar(2.5)} initial="initial" animate="animate" className="relative group border border-[#2c2c2c] p-2.5 sm:p-3 rounded-xl sm:rounded-2xl transition-all duration-300 hover:border-blue-500">
+                            <SiJira className="text-3xl sm:text-5xl text-blue-500" />
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs sm:text-sm text-white bg-black rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                60%
                             </div>
                         </motion.div>
 
