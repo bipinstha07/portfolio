@@ -194,8 +194,7 @@ export default function Resume() {
                 </li>
                 <li className="flex">
                   <span className="mr-2">-</span>
-                  <span>Integrated OpenRouter API for stock predictions, implemented secure user login and premium 
-                  authentication via Spring Security, and built interactive charts with Chart.js, TypeScript, and TailwindCSS.</span>
+                  <span>Integrated OpenRouter API for stock predictions, implemented secure authentication with Spring Security, built interactive charts using Chart.js, TypeScript, and TailwindCSS, and enhanced performance with multithreading via Spring Boot.</span>
                 </li>
               </ul>
               <p className="text-[9px] sm:text-xs text-gray-700 ml-4">

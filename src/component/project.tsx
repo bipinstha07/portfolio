@@ -114,14 +114,11 @@ function Project() {
             description: "An AI-powered stock prediction web app where users can log in and predict stock prices for any company based on provided news or statements. Built with Next.js for the frontend (featuring interactive charts) and Spring Boot backend integrated with Spring AI and Hibernate. Uses OpenRouter API for AI predictions, secured with Spring Security, and stores predicted stock prices for future reference.",
             images: [sp1, sp2, sp3, sp4],
             keypoints: [
-                "User login & authentication",
-                "Predict stock prices from news/statements",
-                "OpenRouter API AI model integration",
-                "Interactive chart visualizations",
-                "Spring AI backend processing",
-                "Premium User Authentication",
-                "Secure access with Spring Security",
-                "Persistent storage of predictions"
+             "User login & premium authentication",
+             "Stock price prediction from news/statements with OpenRouter AI model integration",
+             "Interactive chart visualizations with Spring AI backend processing",
+             "Implemented multithreading with Spring Boot to process multiple stock prediction requests concurrently"
+               
             ],
             technology: "Spring_Boot Spring_AI Hibernate Spring_Security Aritificial_Intelligence Generative_AI OpenRouter_API Next.js TailwindCSS TypeScript Chart.js",
             link: "https://github.com/bipinstha07/stock_prediction",
