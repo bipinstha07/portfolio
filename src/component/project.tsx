@@ -103,8 +103,16 @@ function Project() {
             title: "Quizes Microservices Application",
             description: "A microservices-based quiz generation system built with Spring Boot and Spring AI, utilizing Docker for containerization and running MongoDB and PostgreSQL inside Docker. The system generates quizzes dynamically based on selected categories and leverages AI for question creation. Includes Config Server, API Gateway, Service Registry, and Category Service for modular architecture.",
             images: [qz1, qz2],
-            keypoints: ["Spring AI-powered quiz generation", "Docker inside Docker setup", "MongoDB & PostgreSQL integration", "Category-based dynamic quiz creation", "Microservices architecture", "Config Server for centralized configuration", "API Gateway & Service Registry"],
-            technology: "Spring_Boot Spring_AI Docker MongoDB PostgreSQL Microservices Config_Server API_Gateway Eureka_Service_Registry Externalized_Configuration",
+            keypoints: [
+                "Spring AI-powered Category-based dynamic quiz creation",
+                "Microservices architecture with API Gateway & Service Registry",
+                "Config Server for centralized configuration management",
+                "MongoDB & PostgreSQL integration for data persistence",
+                "Docker setup for containerized deployment",
+                "RabbitMQ and Kafka integration for messaging and event streaming",
+                "Resilience4j Circuit Breaker with Retry, Fallback, and Actuator Monitoring in Spring Cloud Gateway for fault tolerance and graceful degradation"
+              ],
+             technology: "Spring_Boot Spring_AI Docker MongoDB PostgreSQL Microservices RabbitMQ Kafka Config_Server API_Gateway Eureka_Service_Registry Externalized_Configuration",
             link: "https://github.com/bipinstha07/Quizzes-MicroService",
             code: "https://github.com/bipinstha07/Quizzes-MicroService"
         }

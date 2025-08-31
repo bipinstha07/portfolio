@@ -126,23 +126,20 @@ export default function Resume() {
               <ul className="text-[9px] sm:text-xs text-gray-700 space-y-0.5  ml-4">
                 <li className="flex">
                   <span className="mr-2">-</span>
-                  <span>Leveraged Spring AI with a locally hosted model to dynamically generate quizzes, using MongoDB 
-                  for flexible quiz storage and PostgreSQL for relational data in a hybrid database architecture.</span>
+                  <span>Developed an AI-powered quiz platform using Spring AI with a locally hosted model, backed by a hybrid database architecture (MongoDB for flexible storage, PostgreSQL for relational data).</span>
                 </li>
                 <li className="flex">
                   <span className="mr-2">-</span>
-                  <span>Deployed PostgreSQL, MongoDB, and RabbitMQ in Docker containers for portability, consistency, 
-                  and smooth inter-service communication.</span>
+                  <span>Built a resilient microservices ecosystem with API Gateway, Eureka Service Registry, and Config Server, integrating RabbitMQ and Kafka for messaging and event streaming.</span>
                 </li>
                 <li className="flex">
                   <span className="mr-2">-</span>
-                  <span>Managed secure routing and service discovery with API Gateway and Eureka Service Registry for 
-                  seamless microservice interactions.</span>
+                  <span>Ensured high availability and fault tolerance by deploying services in Docker containers and implementing Resilience4j Circuit Breaker with Retry, Fallback, and Actuator Monitoring.</span>
                 </li>
               </ul>
               <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
                 <span className="font-semibold">Tech Stack:</span> <span className="italic">Java, Spring Boot, Spring AI, MongoDB, PostgreSQL, 
-                RabbitMQ, Docker, GitHub</span>
+                RabbitMQ, Kafka, Docker, GitHub</span>
               </p>
             </div>
 
