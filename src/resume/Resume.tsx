@@ -101,8 +101,7 @@ export default function Resume() {
                 </li>
                 <li className="flex">
                   <span className="mr-2">-</span>
-                  <span>Built backend with Spring Boot, Hibernate ORM, and MySQL, deployed on scalable AWS infrastructure 
-                  (EC2, RDS, S3, API Gateway, Elastic Beanstalk) with automated CI/CD via CodePipeline & CodeBuild.</span>
+                  <span>- Deployed backend on AWS (EC2, RDS, S3) with CI/CD, reducing <span className="font-semibold">deployment time from 30 mins to &lt; 5 mins.</span></span>
                 </li>
               </ul>
               <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
@@ -130,11 +129,13 @@ export default function Resume() {
                 </li>
                 <li className="flex">
                   <span className="mr-2">-</span>
-                  <span>Built a resilient microservices ecosystem with API Gateway, Eureka Service Registry, and Config Server, integrating RabbitMQ and Kafka for messaging and event streaming.</span>
+                  <span> Built a resilient microservices ecosystem with API Gateway, Eureka Service Registry, and Config Server, enabling <span className="font-semibold">10,000+
+                  async quiz requests/min </span>  through RabbitMQ and Kafka event streaming.</span>
                 </li>
                 <li className="flex">
                   <span className="mr-2">-</span>
-                  <span>Ensured high availability and fault tolerance by deploying services in Docker containers and implementing Resilience4j Circuit Breaker with Retry, Fallback, and Actuator Monitoring.</span>
+                  <span>Ensured high availability and fault tolerance by deploying services in Docker containers and implementing <span className="font-semibold">Resilience4j 
+                  Circuit Breaker with Retry, Fallback, and Actuator Monitoring</span>, reducing service failure rate by 35% under load testing</span>
                 </li>
               </ul>
               <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
@@ -162,8 +163,8 @@ export default function Resume() {
                 </li>
                 <li className="flex">
                   <span className="mr-2">-</span>
-                  <span>Applied AOP with custom annotations for logging and payment validation, configured centralized 
-                  Logger, and published OpenAPI/Swagger UI for interactive API documentation.</span>
+                  <span>Refactored the payment validation module by applying AOP principles, resulting in a <span className="font-semibold">20% reduction in code duplication
+                  </span>and a more modular design, facilitating easier updates and maintenance. <span className="font-semibold">OpenAPI/Swagger UI </span> for interactive API.</span>
                 </li>
               </ul>
               <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
