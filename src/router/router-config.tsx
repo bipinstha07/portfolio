@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import App from "../App";
 import Resume from "../resume/Resume";
+import Blog from "../blog/Blog";
 
 const routerObj  = createBrowserRouter(
     [
@@ -9,6 +10,9 @@ const routerObj  = createBrowserRouter(
         },
         {path:'/resume',
             element: <Resume/>
+        },
+        {path:'/blog',
+            element: <Blog/>
         }
     
     ]
