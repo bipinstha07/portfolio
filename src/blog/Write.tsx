@@ -65,7 +65,7 @@ function Write() {
 
   return (
     <div className="min-h-screen py-8">
-      <div className="max-w-6xl mx-auto  sm:px-4">
+      <div className="max-w-9xl mx-auto  sm:px-4">
         {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -85,7 +85,7 @@ function Write() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="mb-12"
           >
-            <div className="bg-gradient-to-r from-gray-900/90 to-gray-900/90 rounded-2xl p-8 hover:from-gray-800/90 hover:to-gray-800/90 transition-all duration-300 cursor-pointer">
+            <div className="bg-gray-800/50 rounded-2xl p-8 hover:bg-gray-700/50 transition-all duration-300 cursor-pointer">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-gray-400 text-sm">{article.readTime}</span>
               </div>
@@ -181,7 +181,7 @@ function Write() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
-                className="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto"
+                className="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="p-6">
@@ -217,7 +217,7 @@ function Write() {
 
                   {/* Content */}
                   <div 
-                    className="prose prose-lg max-w-none prose-headings:text-white prose-headings:font-bold prose-p:text-gray-300 prose-p:leading-relaxed prose-ul:text-gray-300 prose-li:text-gray-300"
+                    className="prose prose-lg text-gray-300 max-w-none prose-headings:text-white prose-headings:font-bold prose-p:text-gray-300 prose-p:leading-relaxed prose-ul:text-gray-300 prose-li:text-gray-300"
                     dangerouslySetInnerHTML={{ __html: selectedArticle.detailedContent }}
                   />
 
@@ -225,7 +225,7 @@ function Write() {
                   <div className="mt-8 pt-6 border-t border-gray-700 flex justify-end">
                     <button
                       onClick={() => setSelectedArticle(null)}
-                      className="px-6 py-3 border border-gray-600 hover:border-gray-500 text-white rounded-lg font-medium transition-colors cursor-pointer"
+                      className="px-4 py-1 border border-gray-600 hover:border-gray-200 text-white hover:text-gray-200 rounded-lg font-medium transition-colors cursor-pointer"
                     >
                       Close
                     </button>
