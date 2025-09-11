@@ -470,7 +470,7 @@ function Project() {
                         className="text-center mb-12"
                     >
                         <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-300 mb-3">
-                            Research & Publications
+                            Research & Collaborations
                         </h2>
                         <p className="text-gray-400 text-base max-w-xl mx-auto">
                             Academic research contributions in emerging technologies and educational innovation
