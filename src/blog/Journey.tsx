@@ -14,7 +14,7 @@ interface Article {
   detailedContent: string
 }
 
-function Write() {
+function Journey() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null)
   const articles = [
     {
@@ -240,4 +240,7 @@ function Write() {
   )
 }
 
-export default Write
+
+
+
+export default Journey
