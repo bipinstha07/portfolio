@@ -14,7 +14,7 @@ interface Article {
   detailedContent: string
 }
 
-function Journey() {
+function Life() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null)
   const articles = [
     {
@@ -243,4 +243,4 @@ function Journey() {
 
 
 
-export default Journey
+export default Life

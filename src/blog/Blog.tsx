@@ -3,7 +3,7 @@ import Header from "../component/Header"
 import { useState } from "react";
 import { FiEye, FiEyeOff, FiArrowUp, FiArrowDown, FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import GalaxyBackground from "../component/GalaxyBackground";
-import Journey from "./journey";
+import Life from "./life";
 
 import '../index.css'
 
@@ -39,7 +39,7 @@ function Blog() {
         </div>
         <div className="container z-10 relative px-8 text-white mx-auto">
           <Header />
-          <Journey />
+          <Life />
           <Connect />
         </div>
       </div>
