@@ -172,32 +172,37 @@ export default function Resume() {
               </p>
             </div>
 
-            <div className="mb-4">
-              <div className="flex justify-between items-start mb-1">
-                <h3 className="text-[14px] font-bold text-black">Stock Prediction AI Platform</h3>
-                <div className="text-[9px] sm:text-xs text-blue-600">
-                  <a href="https://github.com/bipinstha07/stock_prediction" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-800">Repository</a>
-                </div>
+          
+          </div>
+
+          {/* Research & Collaborations */}
+          <div className="mb-3">
+            <h2 className="text-[16px] font-bold text-black">RESEARCH & COLLABORATIONS</h2>
+            <div className="border-b border-black mb-2"></div>
+            
+            <div className="mb-2">
+              <div className="flex justify-between items-start ">
+                <h3 className="text-[14px] font-bold text-black">Emerging Scholar Program Research  </h3>
+                <span className="text-[9px] sm:text-xs text-gray-600">Spring 2023 - Fall 2023</span>
               </div>
-              <p className="text-[9px] sm:text-xs text-gray-700 mb-2 leading-tight ml-4">
-                AI-powered stock prediction web app with Next.js frontend and Spring Boot + Spring AI backend. 
-                Predicts stock prices for a given time (in months) from news/statements using Open Router API, 
-                secured with Spring Security.
+              <p className="text-[9px] sm:text-xs text-gray-700 leading-tight ml-4">
+                <span className="italic">Academic Research</span> <span className="text-gray-600 text-xs italic">- University of Louisiana at Monroe</span>
+                <div>
+               - VR in Education - analyzed teacher perceptions of virtual reality for enhanced student engagement and experiential learning
+                </div>
+                <div>
+               - AI in Business Communication - studied impacts of AI, Robotics, and ICT on modern business operations, workforce management, and global economic trends.
+                </div>
               </p>
-              <ul className="text-[9px] sm:text-xs text-gray-700 space-y-0.5  ml-4">
-                <li className="flex">
-                  <span className="mr-2">-</span>
-                  <span>Developed AI-powered stock prediction web app with Next.js frontend (interactive charts) and 
-                  Spring Boot + Spring AI backend, leveraging generative AI for predictive insights.</span>
-                </li>
-                <li className="flex">
-                  <span className="mr-2">-</span>
-                  <span>Integrated OpenRouter API for stock predictions, implemented secure authentication with Spring Security, built interactive charts using Chart.js, TypeScript, and TailwindCSS, and enhanced performance with multithreading via Spring Boot.</span>
-                </li>
-              </ul>
-              <p className="text-[9px] sm:text-xs text-gray-700 ml-4">
-                <span className="font-semibold">Tech Stack:</span> <span className="italic">Java, Spring Boot, MySQL, Hibernate, Spring MVC, 
-                Next.js, TailwindCSS, TypeScript, Generative AI, OpenRouter</span>
+            </div>
+
+            <div className="mb-2">
+              <div className="flex justify-between items-start">
+                <h3 className="text-[14px] font-bold text-black">Google Developer Code (GDSC)</h3>
+                <span className="text-[9px] sm:text-xs text-gray-600">Fall 2024 - Present</span>
+              </div>
+              <p className="text-[9px] sm:text-xs text-gray-700 leading-tight ml-4">
+                <span className="italic">Active Community Member</span> - Coding competitions, hackathons, and mentoring fellow developers.
               </p>
             </div>
           </div>

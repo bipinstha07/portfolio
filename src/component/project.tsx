@@ -149,15 +149,15 @@ function Project() {
             link: "https://github.com/bipinstha07/TrainSystem",
             code:'https://github.com/bipinstha07/TrainSystem'
           },
-        
-        {
-            title: "Blogging Website",
-            description: "A full-featured blogging platform , built for efficient content management and user interaction",
-            images: [blog],
-            technology: "Node.js Express Bootstrap EJS MongoDB crypto.createHmac (SHA-256 + Salt)",
-            link:'https://blog-3npo.onrender.com/',
-            code:'https://github.com/bipinstha07/Blog'
-        },
+          {
+            title: "Armstrong Number Checker",
+            description: "Quickly verify if a number is an Armstrong number. This simple yet efficient tool takes user input and determines whether the number equals the sum of its digits each raised to the power of the number of digits.",
+            technology: "HTML CSS Javascript",
+            images: [armstrong],
+            link:'https://bipinstha07.github.io/Armstrong/',
+            code:'https://github.com/bipinstha07/Armstrong'
+        }, 
+    
         {
             title:"Personal Portfolio",
             description: "A professional personal portfolio showcasing skills, projects, and experience, built with modern web technologies for optimal performance.",
@@ -184,13 +184,6 @@ function Project() {
             code:'https://github.com/bipinstha07/URL_Shortener'
         },
         {
-            title: "Armstrong Number Checker",
-            description: "Quickly verify if a number is an Armstrong number. This simple yet efficient tool takes user input and determines whether the number equals the sum of its digits each raised to the power of the number of digits.",
-            technology: "HTML CSS Javascript",
-            images: [armstrong],
-            link:'https://bipinstha07.github.io/Armstrong/',
-            code:'https://github.com/bipinstha07/Armstrong'
-        }, {
             title:"WSCube Clone Website",
             description:"A Fully Website",
             technology:"HTML CSS Javascript Bootstrap",
@@ -506,7 +499,6 @@ function Project() {
                         </motion.div>
 
                         {/* Research Item 2 */}
-                        {/* bg-gradient-to-br from-purple-900/10 to-pink-900/10 backdrop-blur-sm border border-purple-700/30  */}
                         <motion.div 
                             className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-[2px] border border-blue-700/30 rounded-xl p-6"
                             whileInView={{ x: 0, opacity: 1 }} 
@@ -528,6 +520,33 @@ function Project() {
                                     </p>
                                     <p className="text-gray-300 text-sm leading-relaxed">
                                         Studied the impacts of Artificial Intelligence, Robotics, and ICT on modern business operations and communication. Focused on how emerging technologies reshape business performance, workforce management, and economic factors. Analyzed global trends and challenges, including real-world examples from Nigeria and future outlooks on integrating AI into business and education systems.
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Research Item 3 - Google Developer Code */}
+                        <motion.div 
+                            className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-[2px] border border-green-700/30 rounded-xl p-6"
+                            whileInView={{ x: 0, opacity: 1 }} 
+                            initial={{ x: -100, opacity: 0 }} 
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                        >
+                            <div className="flex flex-col lg:flex-row gap-6">
+                                <div className="lg:w-1/4">
+                                    <div className="text-green-400 font-semibold text-base mb-1">Fall 2024 - Present</div>
+                                    <div className="text-green-300 text-xs">Google Developer Code</div>
+                                </div>
+                                
+                                <div className="lg:w-3/4">
+                                    <h3 className="text-lg font-bold text-white mb-2">
+                                        Google Developer Code Community Engagement
+                                    </h3>
+                                    <p className="text-green-300 text-xs mb-3 italic">
+                                        Active Community Member
+                                    </p>
+                                    <p className="text-gray-300 text-sm leading-relaxed">
+                                        Actively engaged in Google Developer Code community through participation in coding competitions and volunteer work in hosting organizational events. Contribute to hackathons and weekly coding challenges, fostering innovation and collaboration within the developer community. Focus on promoting best practices in software development, mentoring fellow developers, and organizing technical workshops that bridge the gap between theoretical knowledge and practical implementation.
                                     </p>
                                 </div>
                             </div>
