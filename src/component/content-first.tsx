@@ -272,9 +272,10 @@ function ContentFirst() {
         try {
             const res = await fetch(import.meta.env.VITE_REACT_API_GEMINI, request);
             const data = await res.json();
+            console.log("Gemini API Raw Response:", data);
             console.log("Gemini API Raw Response:", data); // Log the full response for debugging
 
-            let modelResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text || "AI I apologize, I don't have enough information to answer that question based on what I know about Bipin Shrestha, or I encountered an issue. Please try again.";
+            let modelResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text || " I apologize, I don't have enough credits for the API.";
 
             // Decide whether to remove markdown or not. Gemini often uses ** for bold.
             // If you want clean text without markdown:
@@ -305,55 +306,7 @@ function ContentFirst() {
         }
     };
 
-    // This useEffect is sending chat history to your backend
-    useEffect(() => {
-        // Only proceed if there's at least one user message and one AI response in the history
-        if (userchat.length < 2) return;
-
-        // Get the last user message and the last AI response
-        // Note: userchat is updated *after* the AI response is received.
-        // So, the last element is the AI's response, and the second to last is the user's query.
-        const lastAIMessage = userchat[userchat.length - 1];
-        const lastUserMessage = userchat[userchat.length - 2];
-
-        // Ensure both are valid messages
-        if (!lastAIMessage || !lastUserMessage || !lastAIMessage.startsWith("AI ") || !lastUserMessage.startsWith("user ")) {
-            console.warn("Skipping chat history send: Incomplete or incorrectly formatted last turn.");
-            return;
-        }
-
-        const oneBlock = `${lastUserMessage} => ${lastAIMessage}`;
-
-        fetch("https://portfoliobackend-production-ccc7.up.railway.app/chat", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                title: "Assistant Conversation Log", // More descriptive title
-                content: oneBlock
-            })
-        })
-            .then(response => {
-                if (!response.ok) {
-                    console.error("Failed to send chat history to backend:", response.statusText);
-                } else {
-                    console.log("Chat history sent to backend successfully.");
-                }
-            })
-            .catch(error => {
-                console.error("Error sending chat history to backend:", error);
-            });
-
-    }, [userchat]); // Dependency array: run when userchat changes
-
-    // This useEffect handles scrolling to the bottom of the chat
-    useEffect(() => {
-        if (chatBodyRef.current) {
-            chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
-        }
-    }, [userchat, chat]); // Include chat in dependency array to re-scroll if chat visibility changes
-
+    
     return (
         <>
             <div className="flex 2xl:h-[75vh]  md:pt-25 flex-wrap  pt-0  relative">
