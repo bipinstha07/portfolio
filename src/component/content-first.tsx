@@ -8,7 +8,7 @@ import { FiEye } from "react-icons/fi";
 
 import person from '../assets/person.png'
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 
 const container = (delay: number) => ({
