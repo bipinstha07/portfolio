@@ -198,7 +198,7 @@ export default function Resume() {
 
             <div className="mb-2">
               <div className="flex justify-between items-start">
-                <h3 className="text-[14px] font-bold text-black">Google Developer Code (GDSC)</h3>
+                <h3 className="text-[14px] font-bold text-black">Google Developer Student Club (GDSC)</h3>
                 <span className="text-[9px] sm:text-xs text-gray-600">Fall 2024 - Present</span>
               </div>
               <p className="text-[9px] sm:text-xs text-gray-700 leading-tight ml-4">

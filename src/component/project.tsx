@@ -11,15 +11,6 @@ import hb8 from '../assets/HotelBooking/hb8.png'
 import url1 from '../assets/Url Shortener/url1.png'
 import url2 from '../assets/Url Shortener/url2.png'
 import url3 from '../assets/Url Shortener/url3.png'
-import sp1 from '../assets/Stock Prediction/sp1.png'
-import sp2 from '../assets/Stock Prediction/sp2.png'
-import sp3 from '../assets/Stock Prediction/sp3.png'
-import sp4 from '../assets/Stock Prediction/sp4.png'
-import pf1 from '../assets/Portfolio/pf1.png'
-import pf2 from '../assets/Portfolio/pf2.png'
-import pf3 from '../assets/Portfolio/pf3.png'
-import pf4 from '../assets/Portfolio/pf4.png'
-import pf5 from '../assets/Portfolio/pf5.png'
 import qz1 from '../assets/Quizes/qz1.png'
 import qz2 from '../assets/Quizes/qz2.png'
 
@@ -116,21 +107,7 @@ function Project() {
             code: "https://github.com/bipinstha07/Quizzes-MicroService"
         }
 ,        
-        {
-            title: "Stock Prediction AI Platform",
-            description: "An AI-powered stock prediction web app where users can log in and predict stock prices for any company based on provided news or statements. Built with Next.js for the frontend (featuring interactive charts) and Spring Boot backend integrated with Spring AI and Hibernate. Uses OpenRouter API for AI predictions, secured with Spring Security, and stores predicted stock prices for future reference.",
-            images: [sp1, sp2, sp3, sp4],
-            keypoints: [
-             "User login & premium authentication",
-             "Stock price prediction from news/statements with OpenRouter AI model integration",
-             "Interactive chart visualizations with Spring AI backend processing",
-             "Implemented multithreading with Spring Boot to process multiple stock prediction requests concurrently"
-               
-            ],
-            technology: "Spring_Boot Spring_AI Hibernate Spring_Security Aritificial_Intelligence Generative_AI OpenRouter_API Next.js TailwindCSS TypeScript Chart.js",
-            link: "https://github.com/bipinstha07/stock_prediction",
-            code: "https://github.com/bipinstha07/stock_prediction"
-        },
+
         
         {
             title: "Train Management System (Backend)",
@@ -157,23 +134,6 @@ function Project() {
             code:'https://github.com/bipinstha07/Armstrong'
         }, 
     
-        {
-            title:"Personal Portfolio",
-            description: "A professional personal portfolio showcasing skills, projects, and experience, built with modern web technologies for optimal performance.",
-            images:[pf1, pf2, pf3, pf4, pf5],
-            keypoints: [
-                "Showcases skills, projects, and experience",
-                "Universe themed 3D with three.js when only click eye button at top right",
-                "Modern, responsive UI design",
-                "Built with React and TailwindCSS",
-                "Smooth animations with Framer Motion",
-                "AI-assisted content via Google Gemini",
-                "Fast performance and SEO optimized"
-            ],
-            technology:"React Tailwind Framer Typescript AI Assistance GEMINI",
-            link:'https://www.bipinshrestha01.com.np',
-            code:'https://github.com/bipinstha07/portfolio'
-        },
         {
             title: "URL Shortener",
             description: "A simple and efficient URL shortening web app built using Node.js, Express, MongoDB, and EJS. It allows users to enter long URLs and generate short, shareable links. When a short link is accessed, it redirects to the original URL.",
@@ -534,7 +494,7 @@ function Project() {
                             <div className="flex flex-col lg:flex-row gap-6">
                                 <div className="lg:w-1/4">
                                     <div className="text-green-400 font-semibold text-base mb-1">Fall 2024 - Present</div>
-                                    <div className="text-green-300 text-xs">Google Developer Code</div>
+                                    <div className="text-green-300 text-xs">Google Developer Student Club</div>
                                 </div>
                                 
                                 <div className="lg:w-3/4">
