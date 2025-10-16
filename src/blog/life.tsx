@@ -19,14 +19,31 @@ function Life() {
   const articles = [
     {
       id: 1,
-      title: "Getting Started with React Hooks",
-      excerpt: "Learn the basics of React Hooks and how they can simplify your functional components with practical examples and best practices.",
+      title: "How I Built a Facebook Group with Over 140,000 Members",
+      excerpt: "What started as a small school project turned into a global Facebook community with over 100,000 members. Space Time became a place where people share their love for space and science every day.",
       author: "Bipin Shrestha",
-      date: "Dec 15, 2024",
+      date: "Oct 15, 2025",
       readTime: "5 min read",
       featured: true,
-      content: "React Hooks revolutionized how we write React components. They allow us to use state and other React features in functional components. The most commonly used hooks are useState and useEffect. useState lets you add state to functional components, while useEffect lets you perform side effects like data fetching or subscriptions.",
-      detailedContent: "React Hooks completely transformed the way we build React applications. Before hooks, we had to use class components to manage state and lifecycle methods, which often led to complex component hierarchies and difficult-to-reuse logic.<br><br>With hooks, we can now use state and other React features directly in functional components, making our code more readable and maintainable. The useState hook is perhaps the most fundamental hook, allowing us to add state to functional components. It returns an array with two elements: the current state value and a function to update it.<br><br>The useEffect hook is equally important, enabling us to perform side effects like data fetching, subscriptions, or manually changing the DOM. Other essential hooks include useContext for consuming context, useReducer for complex state logic, and useMemo and useCallback for performance optimization.<br><br>The beauty of hooks lies in their composability - you can create custom hooks to extract component logic into reusable functions. This leads to cleaner, more testable code and better separation of concerns."
+      content: "What started as a small Facebook group for a few school friends turned into a thriving global community of over 100,000 members. Space Time became a place where people from around the world could share their love for space, science, and discovery. This is the story of how a simple idea grew far beyond what I imagined.",
+      detailedContent: `
+      Eight years ago, when I was still in school, I created a Facebook group called Space Time  a small online space for people who loved science, astronomy, and curiosity about the universe. It began with just 20–30 of my friends, and for years, I kept posting daily  sharing NASA discoveries, space facts, and thought-provoking discussions. Growth was slow at first, but I stayed consistent, engaging members through polls, fun facts, and community conversations. Little by little, people started inviting their friends, and the group began to take shape.
+<br><br>
+After a few years, Facebook’s algorithm started recommending Space Time to more users. New members joined daily, engagement skyrocketed, and the group started growing on its own. I focused on keeping it clean, active, and valuable removing spam, encouraging discussions, and featuring the best posts. These small actions paid off as the group eventually crossed 100,000 members, something I never imagined when I started.
+<br><br>
+Running Space Time taught me powerful lessons about patience, consistency, and community building. I learned that real growth takes time, engagement matters more than numbers, and passion combined with persistence can turn a small idea into something extraordinary.
+<br><br>
+You can check it out here: 👉 <a 
+  style={{ color: 'blue', fontWeight: 'bold', textDecoration: 'underline' }} 
+  href="https://www.facebook.com/groups/1578981188801831" 
+  target="_blank"
+>
+  Space Time Facebook Group
+</a>
+<br><br>
+<img width="90%" src="/spacetime.png" alt="Space Time" />
+
+      `
     },
     {
       id: 2,

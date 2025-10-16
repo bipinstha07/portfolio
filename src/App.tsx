@@ -8,7 +8,7 @@ import Skills from "./component/skills-second"
 import { useState } from "react";
 import { FiEye, FiEyeOff, FiArrowUp, FiArrowDown, FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import GalaxyBackground from "./component/GalaxyBackground";
-
+import Awards from "./component/Awards";
 import './index.css'
 
 function App() {
@@ -45,6 +45,7 @@ function App() {
           <ContentFirst />
           <Skills />
           <Project />
+          <Awards />
           <Education />
           <Connect />
         </div>

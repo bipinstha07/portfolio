@@ -499,13 +499,13 @@ function Project() {
                                 
                                 <div className="lg:w-3/4">
                                     <h3 className="text-lg font-bold text-white mb-2">
-                                        Google Developer Code Community Engagement
+                                        Google Developer Student Club Community Engagement
                                     </h3>
                                     <p className="text-green-300 text-xs mb-3 italic">
                                         Active Community Member
                                     </p>
                                     <p className="text-gray-300 text-sm leading-relaxed">
-                                        Actively engaged in Google Developer Code community through participation in coding competitions and volunteer work in hosting organizational events. Contribute to hackathons and weekly coding challenges, fostering innovation and collaboration within the developer community. Focus on promoting best practices in software development, mentoring fellow developers, and organizing technical workshops that bridge the gap between theoretical knowledge and practical implementation.
+                                        Actively engaged in Google Developer Student Club through participation in coding competitions and volunteer work in hosting organizational events. Contribute to hackathons and weekly coding challenges, fostering innovation and collaboration within the developer community. Focus on promoting best practices in software development, mentoring fellow developers, and organizing technical workshops that bridge the gap between theoretical knowledge and practical implementation.
                                     </p>
                                 </div>
                             </div>
